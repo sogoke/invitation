@@ -12,7 +12,7 @@ gem 'jquery-rails'
 
 # Database
 gem 'mongoid'
-# gem 'bson_ext'
+gem 'bson_ext'
 
 # Use thin as the web server
 # Use unicorn instead

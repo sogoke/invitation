@@ -1,2 +1,6 @@
 <h1>手工客</h1>
-<p>欢迎你！</p>
+<%= form_for @artist, :url => artists_path, :html => {:method => :post} do |f| %>
+	
+	<%= f.label :name %>
+	<%= f.text_field :name %>
+<% end -%>
