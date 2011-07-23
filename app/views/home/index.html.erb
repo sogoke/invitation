@@ -1,6 +1,19 @@
-<h1>手工客</h1>
+<h1><%= t(:sogoke) %></h1>
+<% if flash[:notice] == "successful" %>
+    <%= "successful" %>
+<% end -%>
+
 <%= form_for @artist, :url => artists_path, :html => {:method => :post} do |f| %>
+	<%= sogoke_error_message(@artist) %>
 	
-	<%= f.label :name %>
+	<%= f.label t(:name) %>
 	<%= f.text_field :name %>
+	
+	<%= f.label t(:email) %>
+	<%= f.text_field :email %>
+	
+	<%= f.label t(:description) %>
+	<%= f.text_field :description %>
+	
+	<%= f.submit t(:submit) %>
 <% end -%>

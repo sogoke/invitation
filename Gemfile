@@ -14,6 +14,9 @@ gem 'jquery-rails'
 gem 'mongoid'
 gem 'bson_ext'
 
+# File System
+gem 'aws-sdk'
+
 # Use thin as the web server
 # Use unicorn instead
 # gem 'unicorn'

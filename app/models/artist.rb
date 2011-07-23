@@ -1,5 +1,6 @@
 class Artist
   include Mongoid::Document
+  include Mongoid::Timestamps
   
   field :name
   field :avatar
@@ -7,6 +8,6 @@ class Artist
   field :email
   
   validates_presence_of :name, :email
-  validates_format_of :email, :with => /^[0-9a-zA-Z]+@(([0-9a-zA-Z]+)[.])+[a-z]{2,4}$/i
+  validates_format_of :email, :with => /\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/
   validates_uniqueness_of :email
 end
