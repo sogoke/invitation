@@ -2,7 +2,7 @@ source 'http://rubygems.org'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
-gem 'rails', '3.1.0.rc4'
+gem 'rails', '3.1.0.rc5'
 
 # Asset template engines
 gem 'sass-rails', "~> 3.1.0.rc"
@@ -15,11 +15,12 @@ gem 'mongoid'
 gem 'bson_ext'
 
 # File System
-gem 'aws-sdk'
+gem 'fog'
+gem 'mini_magick'
+gem 'carrierwave'
+gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
 
 # Use thin as the web server
-# Use unicorn instead
-# gem 'unicorn'
 gem 'thin'
 
 # Deploy with Capistrano

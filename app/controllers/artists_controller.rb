@@ -1,8 +1,8 @@
 class ArtistsController < ApplicationController
   def create
-    @artist = Artist.new params[:artist]
-    
-    flash[:notice] = "successful" if @artist.save
-    render "home/index"
+    p params[:artist].inspect
+    @artist = Artist.new(params[:artist])
+    @artist.save!
+    render :nothing => true
   end
 end
