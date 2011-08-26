@@ -6,6 +6,6 @@ class HomeController < ApplicationController
   def join
   end
   
-  def contact
+  def about
   end
 end
