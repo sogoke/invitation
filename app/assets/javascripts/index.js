@@ -51,15 +51,15 @@ function getCraftsman(tube, message, name) {
 
   // Rplace png with gif in the case of IE6
   if ($.browser.msie && $.browser.version === 6.0) {
-    topLeftBG = 'url("css/img/BG-craftsman-top-left.gif")';
-    topRightBG = 'url("css/img/BG-craftsman-top-right.gif")';
-    bottomLeftBG = 'url("css/img/BG-craftsman-bottom-left.gif")';
-    bottomRightBG = 'url("css/img/BG-craftsman-bottom-right.gif")';      
+    topLeftBG = 'url("css/assets/BG-craftsman-top-left.gif")';
+    topRightBG = 'url("css/assets/BG-craftsman-top-right.gif")';
+    bottomLeftBG = 'url("css/assets/BG-craftsman-bottom-left.gif")';
+    bottomRightBG = 'url("css/assets/BG-craftsman-bottom-right.gif")';      
   } else {
-    topLeftBG = 'url("css/img/BG-craftsman-top-left.png")';
-    topRightBG = 'url("css/img/BG-craftsman-top-right.png")';
-    bottomLeftBG = 'url("css/img/BG-craftsman-bottom-left.png")';
-    bottomRightBG = 'url("css/img/BG-craftsman-bottom-right.png")';      
+    topLeftBG = 'url("css/assets/BG-craftsman-top-left.png")';
+    topRightBG = 'url("css/assets/BG-craftsman-top-right.png")';
+    bottomLeftBG = 'url("css/assets/BG-craftsman-bottom-left.png")';
+    bottomRightBG = 'url("css/assets/BG-craftsman-bottom-right.png")';      
   }
 
   if (x < cx && y < cy) {
@@ -85,12 +85,12 @@ function setTube(level, x, y, name, avatar, message) {
   var offset_level0 = 15;
   var offset_level1 = 24;
   var offset_level2 = 50;
-  var topImgs = ['img/tube/top/tube0.png','img/tube/top/tube1.png', 'img/tube/top/tube2.png', 'img/tube/top/tube3.png', 
-    'img/tube/top/tube4.png','img/tube/top/tube5.png', 'img/tube/top/tube6.png', 'img/tube/top/tube7.png'],
-  middleImgs = ['img/tube/middle/tube0.png','img/tube/middle/tube1.png', 'img/tube/middle/tube2.png', 'img/tube/middle/tube3.png', 
-    'img/tube/middle/tube4.png','img/tube/middle/tube5.png', 'img/tube/middle/tube6.png', 'img/tube/middle/tube7.png'],
-  bottomImgs = ['img/tube/bottom/tube0.png','img/tube/bottom/tube1.png', 'img/tube/bottom/tube2.png', 'img/tube/bottom/tube3.png', 
-    'img/tube/bottom/tube4.png','img/tube/bottom/tube5.png', 'img/tube/bottom/tube6.png', 'img/tube/bottom/tube7.png'],            
+  var topImgs = ['assets/tube/top/tube0.png','assets/tube/top/tube1.png', 'assets/tube/top/tube2.png', 'assets/tube/top/tube3.png', 
+    'assets/tube/top/tube4.png','assets/tube/top/tube5.png', 'assets/tube/top/tube6.png', 'assets/tube/top/tube7.png'],
+  middleImgs = ['assets/tube/middle/tube0.png','assets/tube/middle/tube1.png', 'assets/tube/middle/tube2.png', 'assets/tube/middle/tube3.png', 
+    'assets/tube/middle/tube4.png','assets/tube/middle/tube5.png', 'assets/tube/middle/tube6.png', 'assets/tube/middle/tube7.png'],
+  bottomImgs = ['assets/tube/bottom/tube0.png','assets/tube/bottom/tube1.png', 'assets/tube/bottom/tube2.png', 'assets/tube/bottom/tube3.png', 
+    'assets/tube/bottom/tube4.png','assets/tube/bottom/tube5.png', 'assets/tube/bottom/tube6.png', 'assets/tube/bottom/tube7.png'],            
 
   width, height, left, top;
 

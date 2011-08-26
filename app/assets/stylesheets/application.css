@@ -1,0 +1,877 @@
+/* css for sogoke index page */
+
+/******************************************************************************
+ * Reset
+ *****************************************************************************/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}                 
+
+/******************************************************************************
+ * Global
+ *****************************************************************************/
+body {
+  position: relative;
+  width:100%;
+  min-width: 1000px;
+  height: 100%;
+  font-family: "verdana", "Arial", "Tohoma", "sans-serif";
+  font-size: 14px;
+  background: #fcfcfc;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  border: none;
+}
+
+a {
+  color: #aaaaaa;
+}
+
+a:visited {
+}
+
+/********************************************************************
+ * Wrapper
+ *******************************************************************/
+#wrapper {
+  width: 1000px;
+  height: auto;
+  position: absolute;
+  left: 50%;
+  margin-left: -500px;
+}
+
+/**********************************************************
+ * Header
+ *********************************************************/
+#header {
+  width: auto;
+  height: 150px;
+  position: relative;
+  top: 30px;
+  left: 0px;
+}
+
+#header #logo {
+  float: left;
+  clear: left;
+}
+
+#header #logo img {
+  padding: 3px;
+}
+
+#header p {
+  font-size: 14px;
+}
+
+/**********************************************************
+ * Footer
+ *********************************************************/
+#footer {
+  width: auto;
+  height: 40px;
+  position: relative;
+  background-color: #fafafa;
+  color: #999;
+  font-size: 12px;
+}
+
+#footer small {
+  position: relative;
+  top: 14px;
+}
+
+#footer small#copyright {
+  float: left;
+  clear: left;
+  margin-left: 30px;
+}
+
+#footer small#links {
+  float: right;
+  clear: right;
+  margin-right: 20px;
+}
+
+#footer small#links a {
+  color: #aaaaaa;
+}
+/**********************************************************
+ * End of Footer
+ *********************************************************/
+
+/********************************************************************
+ * End of Wrapper
+ *******************************************************************/
+
+/******************************************************************************
+ * Index page
+ *****************************************************************************/
+#honeycomb {
+  position: relative;
+  top: 0px;
+  left: 0;
+}
+
+#indexContent {
+  position: relative;
+  width: auto;
+  height: 239px;
+  top: 50px;
+}
+
+#introduction {
+  position: relative;
+  width: 695px;
+  height: auto;
+  left: 0px;
+  top:30px;
+}
+
+#introduction tr {
+  width: 100%;
+  height: auto;
+  background-color: #f8f3f0;
+  border-top: 1px solid #f5efeb;
+  border-left: 1px solid #f5efeb;
+  border-bottom: 1px solid #f5efeb;
+}
+
+td.value {
+  width: 220px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+td.value p.title {
+  color: #000;
+  display: block;
+}
+
+td.value p.title span {
+  position: relative;
+  top: -8px;
+  left: 3px;
+  font-size: 25px;
+}
+
+td.value p.subtitle {
+  color: #333;
+  font-size: 16px;
+}
+
+td.value p.explain {
+  max-width: 200px;
+  color: #333333;
+  font-size: 13px;
+  margin-top: 8px;
+}
+
+td#discover {
+  position: relative;
+  padding-left: 10px;
+}
+
+td#share {
+  position: relative;
+  padding-left: 10px;
+}
+
+td#grow {
+  position: relative;
+  padding-left: 10px;
+}
+
+/************************************************
+ * Apply
+ ***********************************************/
+#apply {
+  width: 304px;
+  height: 200px;
+  position: absolute;
+  top: -13px;
+  left: 695px;
+  right: 0;
+  background-color: #e3d8d0;
+  display: block;
+  font-size: 12px;
+  border-top: 1px solid #f3f3f3;
+  border-right: 1px solid #f0f0f0;
+  border-left: 1px solid #f3f3f3;
+}               
+
+#apply p.slogan {
+  position: relative;
+  top: 20px;
+  left: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #333333;
+}
+
+#apply p.detail {
+  position: relative;
+  top: 52px;
+  left: 15px;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  color: #999999;
+}             
+
+input.button{
+  width: 111px;
+  height: 37px;
+  background-image: url("assets/button.png");
+  background-repeat: no-repeat;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+input#applyButton {
+  position: relative;
+  top: 95px;
+  left: 98px;
+}                  
+
+.popover {
+  display:none;
+  position:fixed;
+  height: 100%;
+  width:100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 7;
+}
+
+/************************************************
+ * Feedback
+ ***********************************************/
+.popover div#feedback {
+  display: none;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  margin: -100px 0 0 -230px;
+  text-align: center;
+  background: url('assets/BG-feedback.png') no-repeat;
+  width: 460px;
+  height: 200px;
+  z-index: 7;
+}
+
+.popover div#feedback img.feedbackClose {
+  position: absolute;
+  top: 29px;
+  left: 440px;
+  z-index:1000;
+}
+
+.popover div#feedback p.success {
+  display: block;
+  width: auto;
+  height: 30px;
+  position: relative;
+  top: 50px;
+  left: -20px;
+  color: #090;
+  font-size: 26px;
+  z-index: 8;
+}
+
+.popover div#feedback p.success span {
+  position: relative;
+  top: -6px;
+  left: 10px;
+}
+
+.popover div#feedback p.email {
+  position: relative;
+  top: 70px;
+  z-index: 8;
+}
+
+.popover div#feedback p.email span {
+  color: #000;
+  font-size: 16px;
+}
+
+.popover div#feedback p.thanks {
+  position: relative;
+  top: 90px;
+  left: 0;
+  max-width: 450px;
+  margin-bottom: 50px;
+  color: #666;
+  font-size: 14px;
+  z-index: 18;
+}
+
+/**********************************************************
+ * Craftsman
+ *********************************************************/
+#craftsman {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 350px;
+  height: 200px;
+  display: none;
+  z-index: 3;
+}
+
+#craftsman .topLeftName {
+  position: absolute;
+  top: 145px;
+  right: 30px;
+  font-family: "MS Yahei";
+  font-size:35px;
+  color: #d45500;
+  width: auto;
+  height: 35px;
+  padding: 3px 8px;
+}
+
+#craftsman .topLeftMessage {
+  width: 240px;
+  margin-left: 85px;
+  margin-top:33px;
+  font-size: 14px;
+  color: #000;
+}
+
+#craftsman .topRightName {
+  position: absolute;
+  top: 145px;
+  left: 200px;
+  font-family: "MS Yahei";
+  font-size:30px;
+  color: #d45500;
+  width: auto;
+  height: 35px;
+  padding: 3px 8px;
+}
+
+#craftsman .topRightMessage {
+  width: 240px;
+  margin-left: 25px;
+  margin-top:30px;
+  font-size: 14px;
+  color: #000;
+}                  
+
+#craftsman .bottomLeftName {
+  position: absolute;
+  top: 145px;
+  right: 30px;
+  font-family: "MS Yahei";
+  font-size:30px;
+  color: #d45500;
+  width: auto;
+  height: 35px;
+  padding: 3px 8px;
+}
+
+#craftsman .bottomLeftMessage {
+  width: 240px;
+  margin-left: 85px;
+  margin-top:30px;
+  font-size: 14px;
+  color: #000;
+}                  
+
+#craftsman .bottomRightName {
+  position: absolute;
+  top: 145px;
+  right: 80px;
+  font-family: "MS Yahei";
+  font-size:30px;
+  color: #d45500;
+  width: auto;
+  height: 35px;
+  padding: 3px 8px;
+}
+
+#craftsman .bottomRightMessage {
+  width: 240px;
+  margin-left: 25px;
+  margin-top:30px;
+  font-size: 14px;
+  color: #000;
+}                  
+
+#craftsman .avatar {
+  border: 1px solid #666666;
+  margin-left: 60px;
+  margin-top: 24px;
+}
+
+.craftsmanClose {
+  position: absolute;
+  z-index: 4;
+  cursor: pointer;
+  display: none;
+}
+
+/************************************************
+ * Request
+ ***********************************************/
+.popover div#request {
+  position: relative;
+  width: 660px;
+  height: auto;
+  top: 100px;
+  left: 50%;
+  margin: 0 0 0 -330px;
+  background: #ffffff;
+  padding: 0 0 70px 0;
+  border: 1px solid #f8f8f5;
+}
+
+.popover div#request img.requestClose {
+  position: absolute;
+  top: -1px;
+  left: 641px;
+  z-index:1000;
+  cursor: pointer;
+}
+
+.popover div#request div.detail {
+  position: relative;
+  top: 0;
+  left: 0;
+  margin: 0 50px;
+  padding: 0;
+  font-size: 14px;
+  color: #838383;
+}
+
+.popover div#request div.detail h4.title {
+  position: relative;
+  top: 25px;
+  left: 0;
+  font-size: 30px;
+  margin: 0;
+  color: #000000;
+}
+
+.popover div#request div.detail p.alternative {
+  position: absolute;
+  top: 35px;
+  right: 10px;
+  font-size: 12px;
+  color: #838383;
+}
+
+.popover div#request div.detail p.alternative a {
+  color: #5278c7;
+  text-decoration: underline;
+  margin: 0 0 0 3px;
+}
+
+.popover div#request div.detail p.caution {
+  position: relative;
+  top: 35px;
+  left: 0px;
+  width: 560px;
+  height: 1em;
+  margin: 35px 0 0 0;
+  padding: 10px 0;
+  text-align: center;
+  background: #f8f8f5;
+  border: 1px solid #f0f0f0;
+}
+
+/**************************************
+ * Request form
+ *************************************/
+.popover div#request div.detail form.request {
+  position: relative;
+  top: 25px;
+  left: 0;
+  width: auto;
+  height: auto;
+  margin: 25px 0 0 0;
+}
+
+.popover div#request div.detail form.request fieldset {
+  border: none;
+}
+
+/****************************
+ * Label
+ ***************************/
+.popover div#request div.detail form.request fieldset label {
+  color: #000000;
+}
+
+.popover div#request div.detail form.request fieldset label.nickname {
+  margin: 0 0 0 2em;
+}
+
+.popover div#request div.detail form.request fieldset label.email {
+  margin: 0 0 0 2em;
+}
+
+.popover div#request div.detail form.request fieldset label.avatar {
+  margin: 0 0 0 2em;
+}
+
+.popover div#request div.detail form.request fieldset label.selfIntro {
+  position: relative;
+  top: -110px;
+  left: 0px;
+}
+
+/****************************
+ * Input
+ ***************************/
+.popover div#request div.detail form.request fieldset input {
+  position: relative;
+  top: 0;
+  left: 0;
+  margin: 10px 0 0 0;
+  width: 260px;
+  height: 40px;
+  font-size: 14px;
+  color: #838383;
+  border: 1px solid #dfdfdf;
+}
+
+.popover div#request div.detail form.request fieldset input.nickname {
+}
+
+.popover div#request div.detail form.request fieldset input.email {
+}
+
+.popover div#request div.detail form.request fieldset input.avatar {
+  height: auto;
+  padding: 5px 0;
+  border: none;
+}
+
+.popover div#request div.detail form.request fieldset input.button {
+  position: relative;
+  top: 0;
+  left: 3.7em;
+  color: #ffffff;
+  background: #ca5335;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+}
+
+.popover div#request div.detail form.request fieldset textarea.selfIntro {
+  margin: 10px 0 0 0;
+  width: 256px;
+  height: 120px;
+  color: #838383;
+  font-size: 14px;
+  border: 1px solid #dfdfef;
+  overflow-y: auto;
+}
+
+/****************************
+ * Error/Help Message
+ ***************************/
+.popover div#request div.detail form.request fieldset strong {
+  color: #ff4040;
+  margin: 0 0 0 10px;
+  font-size: 16px;
+  display: none;
+}
+
+.popover div#request div.detail form.request fieldset strong.selfIntroError {
+  position: relative;
+  top: -80px;
+  left: 0;
+}
+
+.popover div#request div.detail form.request fieldset strong.selfIntroCounter {
+  position: relative;
+  top: -60px;
+  left: 0px;
+  color: #000000;
+}
+
+.popover div#request div.detail form.request fieldset strong img.icon {
+  margin: 0px 5px -3px 0;
+}
+
+.popover div#request div.detail form.request fieldset strong span.message {
+
+}
+
+.popover div#request div.detail form.request fieldset p.already {
+  position: relative;
+  top: 18px;
+  left: 48px;
+  font-weight: bold;
+  color: #999999;
+}
+
+ /*****************************************************************************
+ * About Page
+ *****************************************************************************/
+#aboutContent {
+}
+
+#aboutContent div#about {
+  position: relative;
+  width: 700px;
+  height: auto;
+}
+
+#aboutContent div#about h3#aboutUS {
+  padding-bottom: 8px;
+  font-size: 24px;
+  width: 970px;
+  border-bottom: 1px solid #eeeeee;
+}
+
+#aboutContent div#about div#hope {
+    margin-top: 15px;
+}
+
+#aboutContent div#about p.title {
+  font-size: 20px;
+  font-family: "Microsoft YaHei";
+}
+
+#aboutContent div#about p.email {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+ /*****************************************************************************
+ * Contact Page
+ *****************************************************************************/
+#contactContent {
+}
+
+#join {
+  position: relative;
+  top: 0;
+  left: 0;
+  min-height: 660px;
+}
+
+#join p.email {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+#join h3#joinUS {
+  width: 700px;
+  font-family:"Microsoft YaHei";
+  padding-bottom: 8px;
+  font-size: 24px;
+  border-bottom: 1px solid #eeeeee;
+}
+
+#join div#why {
+    margin: 15px 0 0 0;
+    font-family:"Microsoft YaHei";
+}
+
+#join div#needs {
+    margin: 30px 0 0 0;
+}
+
+#join div#needs ul.position li {
+  list-style: none;
+  margin: 0 0 0 20px;
+}                          
+
+#join div#needs ul.position li:hover {
+  list-style-image: url("assets/bullet-turn.png");
+}
+
+#join div#needs ul.position li a.scroll {
+  display: block;
+  font-size: 15px;
+  margin: 20px 0 0 0;
+  text-decoration: none;
+}
+
+#join div#needs p.title {
+  font-size: 20px;
+  font-family: "Microsoft YaHei", "sans-serif";
+}
+
+#join div#needs li {
+  list-style-image: url("assets/bullet.png");
+}
+
+#join div.job {
+  width: 620px;
+  height: auto;
+  margin: 0 0 35px 0;
+  padding: 0 0 35px 0;
+  border-bottom: 1px solid #eeeeee;
+}
+
+#join div.job li {
+  list-style-image: url("assets/bullet.png");
+  margin-left: 10px;
+}
+
+#join div.job p.position {
+  color: #e2a70a;
+  font-family:"Microsoft YaHei";
+  font-size: 20px;
+  font-weight: bold;
+  margin: 25px 0 20px 0;
+}
+
+#join div.job p.priority {
+  font-family:"Microsoft YaHei";
+  font-size:14px;
+  font-weight: bold;
+  margin: 15px 0 10px 0;
+}
+
+#join div.job a.back2top {
+  float: right;
+  clear: right;
+  color: #c2d3fc;
+  font-size: 12px;
+  text-decoration: none;
+  margin: 20px 0 0 0;
+}
+
+#join div.job a.back2top:hover {
+  color: #5278c7;
+}
+#join div.job a.back2top:visited {
+  color: #c2d3fc;
+}
+
+/************************************************
+ * Sidebar
+ ***********************************************/
+#sidebar {
+  position: absolute;
+  width: 250px;
+  height: auto;
+  top: 155px;
+  left: 750px;
+}
+
+#sidebar div#follow h3 {
+  width: 250px;
+  padding:  0 0 8px 0;
+  color: #333333;
+  font-size: 18px;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+#sidebar div#sns {
+    margin: 15px 0 0 0;
+}
+
+#sidebar div#follow div#sns p a {
+  text-decoration: none;
+}
+
+#sidebar div#follow div#sns p {
+  display: block;
+  font-size: 14px;
+}
+
+#sidebar div#follow div#sns p a span {
+  position: relative;
+  top: -26px;
+  left: -70px;
+}
+
+#sidebar div#recommend {
+  width: 250px;
+  height: auto;
+  min-height: 210px;
+  margin: 45px 0 0 0;
+  background-color:#f8f8f8;
+  border: 1px solid #f1f1f1;
+}
+
+#sidebar div#recommend a {
+  text-decoration: none;
+}
+
+#sidebar div#recommend h4 {
+  position: relative;
+  top: 10px;
+  left: 10px;
+  font-size: 24px;
+}
+
+#sidebar div#recommend img.cover {
+  margin: 10px 0 0 10px;
+}
+
+#sidebar div#recommend div.description {
+  position: relative;
+  top: -155px;
+  left: 110px;
+  font-size: 12px;
+  color: #838383;
+  line-height: 1em;
+  height: 0px;
+}
+
+#sidebar img.label {
+  margin: 0 0 0 70px;
+}                              
