@@ -3,9 +3,9 @@ class HomeController < ApplicationController
     @artist = Artist.new
   end
   
-  def about_us
+  def join
   end
   
-  def contact_us
+  def contact
   end
 end
