@@ -8,7 +8,7 @@ class Artist
   mount_uploader :avatar, AvatarUploader
   
   validates :name, presence: true, uniqueness: true
-  validates :name, presence: true, uniqueness: true
+  validates :email, presence: true, uniqueness: true
   validates :avatar, presence: true
   validates_format_of :email, :with => /\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/
 end
