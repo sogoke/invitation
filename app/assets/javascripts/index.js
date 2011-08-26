@@ -51,15 +51,15 @@ function getCraftsman(tube, message, name) {
 
   // Rplace png with gif in the case of IE6
   if ($.browser.msie && $.browser.version === 6.0) {
-    topLeftBG = 'url("assets/BG-craftsman-top-left.gif")';
-    topRightBG = 'url("assets/BG-craftsman-top-right.gif")';
-    bottomLeftBG = 'url("assets/BG-craftsman-bottom-left.gif")';
-    bottomRightBG = 'url("assets/BG-craftsman-bottom-right.gif")';      
+    topLeftBG = 'url("assets/css/BG-craftsman-top-left.gif")';
+    topRightBG = 'url("assets/css/BG-craftsman-top-right.gif")';
+    bottomLeftBG = 'url("assets/css/BG-craftsman-bottom-left.gif")';
+    bottomRightBG = 'url("assets/css/BG-craftsman-bottom-right.gif")';      
   } else {
-    topLeftBG = 'url("assets/BG-craftsman-top-left.png")';
-    topRightBG = 'url("assets/BG-craftsman-top-right.png")';
-    bottomLeftBG = 'url("assets/BG-craftsman-bottom-left.png")';
-    bottomRightBG = 'url("assets/BG-craftsman-bottom-right.png")';      
+    topLeftBG = 'url("assets/css/BG-craftsman-top-left.png")';
+    topRightBG = 'url("assets/css/BG-craftsman-top-right.png")';
+    bottomLeftBG = 'url("assets/css/BG-craftsman-bottom-left.png")';
+    bottomRightBG = 'url("assets/css/BG-craftsman-bottom-right.png")';      
   }
 
   if (x < cx && y < cy) {
@@ -224,11 +224,14 @@ $(document).ready(function() {
         bottomX = Math.floor(WIDTH / BOTTOM_TUBE_SIZE),
         bottomY = Math.floor(VISUAL_HEIGHT / BOTTOM_TUBE_SIZE),
         middleX = Math.floor(WIDTH / MIDDLE_TUBE_SIZE),
-    middleY = Math.floor(VISUAL_HEIGHT / 72),  // reduce the horizontal line
+    middleY = Math.floor(VISUAL_HEIGHT / MIDDLE_TUBE_SIZE),  // reduce the horizontal line
       topX = Math.floor(WIDTH / BOTTOM_TUBE_SIZE),
       topY = Math.floor(VISUAL_HEIGHT / TOP_TUBE_SIZE);
 
+      /////////////////////////////////////////////////////////////////////
       // Draw the honeycomb
+      ////////////////////////////////////////////////////////////////////
+      // 1st level
       for (i = 0; i < bottomX; i++) {
         for (j = 0; j < bottomY; j++) {
           if($.inArray(i + '' + j, BOTTOM_BLACKLIST) < 0) {
@@ -237,6 +240,7 @@ $(document).ready(function() {
         }
       }
 
+      // 2nd level
       for (i = 0; i < middleX; i++) {
         for (j = 0; j < middleY; j++) {
           if ($.inArray(i + '' + j, MIDDLE_BLACKLIST) < 0) {
@@ -245,15 +249,19 @@ $(document).ready(function() {
         }
       }            
 
+      /*
+      // 3rd level
       for (i = 0; i < topX; i++) {
         for (j = 0; j < topY; j++) {
           if ($.inArray(i + '' + j, TOP_BLACKLIST) < 0) {
             setTube(2, i, j);
           }
         }
-      }
+      }*/
 
-      // Compatibility
+      //////////////////////////////////////////////////////////////////
+      // Adjuct compatibility issues
+      //////////////////////////////////////////////////////////////////
       // IE 6
       if ($.browser.msie && $.browser.version == 6.0) {
         $('label#forAvatar').css({'top':'8px'});

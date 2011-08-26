@@ -114,6 +114,15 @@ a:visited {
 }
 
 /**********************************************************
+ * Content
+ *********************************************************/
+.content {
+  position: relative;
+  width: auto;
+  height: auto;
+}
+
+/**********************************************************
  * Footer
  *********************************************************/
 #footer {
@@ -160,6 +169,8 @@ a:visited {
   position: relative;
   top: 0px;
   left: 0;
+  width: 1000px;
+  height: 380px;
 }
 
 #indexContent {
@@ -271,7 +282,7 @@ td#grow {
 input.button{
   width: 111px;
   height: 37px;
-  background-image: url("assets/button.png");
+  background-image: url("assets/css/button.png");
   background-repeat: no-repeat;
   color: #ffffff;
   font-size: 14px;
@@ -307,7 +318,7 @@ input#applyButton {
   left: 50%;
   margin: -100px 0 0 -230px;
   text-align: center;
-  background: url('assets/BG-feedback.png') no-repeat;
+  background: url('assets/css/BG-feedback.png') no-repeat;
   width: 460px;
   height: 200px;
   z-index: 7;
@@ -667,12 +678,14 @@ input#applyButton {
  * About Page
  *****************************************************************************/
 #aboutContent {
+  margin: 50px 0 0 30px;
 }
 
 #aboutContent div#about {
   position: relative;
   width: 700px;
   height: auto;
+  margin: 0 0 30px 0;
 }
 
 #aboutContent div#about h3#aboutUS {
@@ -700,6 +713,7 @@ input#applyButton {
  * Contact Page
  *****************************************************************************/
 #contactContent {
+  margin: 50px 0 0 30px;
 }
 
 #join {
@@ -737,7 +751,7 @@ input#applyButton {
 }                          
 
 #join div#needs ul.position li:hover {
-  list-style-image: url("assets/bullet-turn.png");
+  list-style-image: url("assets/css/bullet-turn.png");
 }
 
 #join div#needs ul.position li a.scroll {
@@ -753,7 +767,7 @@ input#applyButton {
 }
 
 #join div#needs li {
-  list-style-image: url("assets/bullet.png");
+  list-style-image: url("assets/css/bullet.png");
 }
 
 #join div.job {
@@ -765,7 +779,7 @@ input#applyButton {
 }
 
 #join div.job li {
-  list-style-image: url("assets/bullet.png");
+  list-style-image: url("assets/css/bullet.png");
   margin-left: 10px;
 }
 
@@ -807,7 +821,7 @@ input#applyButton {
   position: absolute;
   width: 250px;
   height: auto;
-  top: 155px;
+  top: 6px;
   left: 750px;
 }
 
@@ -830,6 +844,7 @@ input#applyButton {
 #sidebar div#follow div#sns p {
   display: block;
   font-size: 14px;
+  margin: 0 0 5px 0;
 }
 
 #sidebar div#follow div#sns p a span {
@@ -874,4 +889,4 @@ input#applyButton {
 
 #sidebar img.label {
   margin: 0 0 0 70px;
-}                              
+}
