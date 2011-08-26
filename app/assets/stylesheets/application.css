@@ -282,7 +282,7 @@ td#grow {
 input.button{
   width: 111px;
   height: 37px;
-  background-image: url("assets/css/button.png");
+  background-image: url("css/button.png");
   background-repeat: no-repeat;
   color: #ffffff;
   font-size: 14px;
