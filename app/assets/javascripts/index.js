@@ -51,15 +51,15 @@ function getCraftsman(tube, message, name) {
 
   // Rplace png with gif in the case of IE6
   if ($.browser.msie && $.browser.version === 6.0) {
-    topLeftBG = 'url("css/assets/BG-craftsman-top-left.gif")';
-    topRightBG = 'url("css/assets/BG-craftsman-top-right.gif")';
-    bottomLeftBG = 'url("css/assets/BG-craftsman-bottom-left.gif")';
-    bottomRightBG = 'url("css/assets/BG-craftsman-bottom-right.gif")';      
+    topLeftBG = 'url("assets/BG-craftsman-top-left.gif")';
+    topRightBG = 'url("assets/BG-craftsman-top-right.gif")';
+    bottomLeftBG = 'url("assets/BG-craftsman-bottom-left.gif")';
+    bottomRightBG = 'url("assets/BG-craftsman-bottom-right.gif")';      
   } else {
-    topLeftBG = 'url("css/assets/BG-craftsman-top-left.png")';
-    topRightBG = 'url("css/assets/BG-craftsman-top-right.png")';
-    bottomLeftBG = 'url("css/assets/BG-craftsman-bottom-left.png")';
-    bottomRightBG = 'url("css/assets/BG-craftsman-bottom-right.png")';      
+    topLeftBG = 'url("assets/BG-craftsman-top-left.png")';
+    topRightBG = 'url("assets/BG-craftsman-top-right.png")';
+    bottomLeftBG = 'url("assets/BG-craftsman-bottom-left.png")';
+    bottomRightBG = 'url("assets/BG-craftsman-bottom-right.png")';      
   }
 
   if (x < cx && y < cy) {
