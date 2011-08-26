@@ -1,2 +1,5 @@
 //= require jquery
-//= require_tree .
+//= require sogoke
+//= require compatibility
+//= require raphael-min
+//= require init

@@ -1,19 +1,76 @@
-<h1><%= t(:sogoke) %></h1>
 
-<%= form_for @artist, :url => artists_path, :html => {:method => :post} do |f| %>
-	<%= sogoke_error_message(@artist) %>
-	
-	<%= f.label t(:name) %>
-	<%= f.text_field :name %>
-	
-	<%= f.label t(:avatar) %>
-	<%= f.file_field :avatar %>
-	
-	<%= f.label t(:email) %>
-	<%= f.text_field :email %>
-	
-	<%= f.label t(:description) %>
-	<%= f.text_field :description %>
-	
-	<%= f.submit t(:submit) %>
-<% end -%>
+      <div id="honeycomb">
+      </div><!-- honeycomb -->
+
+
+      <div id="content">
+        <table id="introduction">
+          <tr>
+            <td class="value" id="discover">
+              <p class="title"><img src="images/discover.jpg" alt="discover" width="36" height="38" /><span>发现</span></p>
+              <p class="subtite">发现手工之美</p>
+              <p class="explain">透过原创的作平，博文···发现那些素未谋面但却彼此欣赏的人，然后一起分享和发现更多的手工之美！</p>
+            </td>
+            <td class="value" id="share">
+              <p class="title"><img src="images/share.jpg" alt="share" width="36" heigth="38" /><span>分享</span></p>
+              <p class="subtitle">分享关于手工的一切</p>
+              <p class="explain">简单快捷的分享你的手工作品、博文和话题，交流想法和经验，并找到欣赏者。</p>
+            </td>
+            <td class="value" id="grow">
+              <p class="title" id="grow"><img src="images/grow.jpg" alt="grow" width="36" height="38" /><span>成长</span></p>
+              <p class="subtitle">成长为手工达人</p>
+              <p class="explain">获得乐趣和朋友之余，你还可以销售你的作品，建立你的个人风格和品牌。</p>
+            </td>
+          </tr>
+        </table><!--introduction -->
+        <div id="apply">
+          <p class="slogan">归巢？一起筑巢！</p>
+          <p class="detail">第一个社交化手工爱好者社区即将诞生！<br />
+          欢迎手工爱好者第一时间归巢！</p>
+          <input type="submit" value="申请邀请码" class="button" id="applyButton" />
+        </div><!-- apply -->
+      </div><!-- content -->
+
+
+      <div id="craftsman"></div>
+      
+        </div><!-- wrapper -->
+        <div class="popover">
+          <div class="content" id="request">
+            <img src="images/popoverClose.png" class="requestClose" />
+            <div class="detail">
+              <h4 class="title">申请邀请码</h4>
+              <p class="caution">手工客内测中，并不对外开放，但我们欢迎对网站感兴趣的朋友加入！</p>
+              <form class="request">
+                <fieldset>
+                  <label for="nickname" class="nickname">昵称:</label>
+                  <input type="text" class="nickname" name="nickname" value="你的真实姓名，或网络昵称" /><strong class="nicknameError"><img src="images/error.png" class="icon" alt="" /><span class="message">昵称不能为空</span></strong><br />
+                  <label for="avatar" class="avatar">头像:</label>
+                  <input type="file" class="avatar" />
+                  <strong class="avatarError"><img src="images/error.png" class="icon" /><span class="message">头像是必须的</span></strong><br />
+                  <label for="email" class="email">邮箱:</label>
+                  <input type="email" class="email" name="email" value="你的常用邮箱地址，注册了就不能更改" />
+                  <strong class="emailError">
+                    <img src='images/error.png' class="icon" alt="" />
+                    <span class="message">邮箱不能为空</span>
+                  </strong>
+                  <strong class="emailInvalid">
+                    <img src='images/error.png' class="icon" alt="" />
+                    <span class="message">邮箱地址格式不对</span>
+                  </strong>
+                  <br />                      
+                  <label for="selfIntro" class="selfIntro">自我介绍:</label>
+                  <textarea class="selfIntro">介绍自己，让我们了解你，可以加上你常去的论坛ID，淘宝店铺、博客地址、微博等等</textarea><strong class="selfIntroError"><img src="images/error.png" class="icon" alt="" /><span class="message">自我介绍不能为空</span></strong><strong class="selfIntroCounter"></strong><br />
+                  <input type="submit" class="button" value="申请邀请码" />
+                </fieldset>
+              </form>
+            </div><!-- detail -->
+          </div><!-- content request -->
+          <div class="content" id="feedback">
+            <p class="success"><img src="images/smileIcon.png"><span>申请成功</span></p> 
+            <p class="email">你的电子邮箱：<span class="text"></span></p> 
+            <p class="thanks">我们会在第一时间将邀请码发送至你的邮箱，感谢你的支持和关注！</p>
+            <img class="feedbackClose" src="images/popoverClose.png" alt="" />  
+          </div><!-- content feedback -->
+        </div><!-- popover -->
+      

@@ -1,14 +1,40 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Invitation</title>
-  <%= stylesheet_link_tag    "application" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>手工客 用双手，做你自己</title>
+    <!--
+    <link rel="stylesheet" type="text/css" href="http://meyerweb.com/eric/tools/css/reset/reset.css">
+    -->
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/index.css"  />
+    <!--[if IE 6]>
+    <link rel="stylesheet" type="text/css" href="css/ie6.css" />
+    <![endif]-->
+    <!--[if IE 7]>
+    <link rel="stylesheet" type="text/css" href="css/ie7.css" />
+    <![endif]-->
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="css/ie8.css" />
+    <![endif]-->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+	<%= javascript_include_tag "application" %>
+  </head>
+  <body>
+    <div id="wrapper">
+      <div id="header">
+        <a id="logo" href=""><img src="images/logo.png" alt="logo"/></a>
+      </div><!-- header -->
 
 <%= yield %>
+
+<div id="footer">
+    <small id="copyright">Copyright@sokoge.com 2011, All Right Reserved</small>
+    <small id="links"><a href="about.html">关于手工客<a/>  <a href="contact.html">加入我们</a></small>
+      </div><!-- footer -->
 
 </body>
 </html>

@@ -6,6 +6,6 @@ class HomeController < ApplicationController
   def about_us
   end
   
-  def join_us
+  def contact_us
   end
 end
