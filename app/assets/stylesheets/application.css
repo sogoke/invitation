@@ -318,7 +318,7 @@ input#applyButton {
   left: 50%;
   margin: -100px 0 0 -230px;
   text-align: center;
-  background: url('assets/css/BG-feedback.png') no-repeat;
+  background: url('css/BG-feedback.png') no-repeat;
   width: 460px;
   height: 200px;
   z-index: 7;

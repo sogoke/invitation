@@ -1,3 +1,3 @@
 //= require jquery
-//= require raphael-min
+//= require raphael
 //= require index
