@@ -5,10 +5,6 @@
 
 # Uncomment the following block if you want each input field to have the validation messages attached.
  ActionView::Base.field_error_proc = Proc.new do |html_tag, instance|
-   unless html_tag =~ /^<label/
-     %{<strong class="avatarError"><img src="assets/error.png" class="icon" /><span class="message">#{instance.error_message.first}</span></strong><br />}.html_safe
-   else
-     %{<div class="field_with_errors">#{html_tag}</div>}.html_safe
-   end
+   %{#{html_tag}<strong class="avatarError" style="display:inline"><img src="assets/error.png" class="icon" /><span class="message">#{instance.error_message.first}</span></strong>}.html_safe
  end
 

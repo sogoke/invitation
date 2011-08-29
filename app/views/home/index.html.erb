@@ -44,7 +44,7 @@
               <h4 class="title">申请邀请码</h4>
               <p class="caution">手工客内测中，并不对外开放，但我们欢迎对网站感兴趣的朋友加入！</p>
 			
-			  <%= form_for @artist, html: {class: "request"} do |f| %>
+			  <%= form_for @artist, :html => { :class => "request" } do |f| %>
 				<fieldset>
 				<%= f.label "昵称", class: "nickname" %>
 			  	<%= f.text_field :name, class: "nickname", placeholder: "你的真实姓名，或网络昵称" %><br />
@@ -53,7 +53,8 @@
 				<%= f.label "邮箱", class: "email" %>
 			  	<%= f.text_field :email, class: "email", placeholder: "你的常用邮箱地址，注册了就不能更改" %><br />
 				<%= f.label "自我介绍", class: "selfIntro" %>
-				<%= f.text_area :description, class: "selfIntro", placeholder: "介绍自己，让我们了解你，可以加上你常去的论坛ID，淘宝店铺、博客地址、微博等等" %><br />
+				<%= f.text_area :description, class: "selfIntro", placeholder: "介绍自己，让我们了解你，可以加上你常去的论坛ID，淘宝店铺、博客地址、微博等等" %>
+				<strong class="selfIntroCounter"></strong><br />
 				<%= f.submit "申请邀请码", class: "button" %>
 				<fieldset>
 			  <% end -%>
