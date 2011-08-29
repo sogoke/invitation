@@ -2,6 +2,7 @@ class ArtistsController < ApplicationController
   def create
     @artist = Artist.new(params[:artist])
     @artist.save!
-    render :nothing => true
+    
+    redirect_to "/", notice: "successful"
   end
 end

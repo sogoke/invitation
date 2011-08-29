@@ -11,7 +11,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
     %w(jpg jpeg gif png)
   end
 
- def filename
+  def filename
     @name ||= "#{secure_token}.#{file.extension}" if original_filename.present?
   end
 
