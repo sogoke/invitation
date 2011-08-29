@@ -1,0 +1,131 @@
+/* css hacks for ie7 */
+
+/******************************************************************************
+ * Global
+ *****************************************************************************/
+body {
+}
+
+#footer small {
+  padding: 8px 0 0 0;
+}
+
+/*=============================================================================
+ * index page
+ *===========================================================================*/
+.popover {
+  position:fixed;
+  background: transparent;
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#B2000000,endColorstr=#B2000000)"; /* IE8 */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#B2000000,endColorstr=#B2000000);   /* IE6 & 7 */
+  zoom: 1;
+}
+
+.popover div#feedback {
+  background: url(css/BG-feedback.gif) no-repeat center center;
+  z-index: 8;
+}
+
+.popover div#request img.requestClose {
+  left: 641px;
+}
+
+.popover div#request div.detail form.request fieldset label.nickname {
+  position: relative;
+  top: -10px;
+  margin: 0 0 0 2em;
+}
+
+.popover div#request div.detail form.request fieldset label.email {
+  position: relative;
+  top: -10px;
+  margin: 0 0 0 2em;
+}
+
+.popover div#request div.detail form.request fieldset input.nickname {
+   height: 1em;
+   padding: 13px 0;
+}
+
+.popover div#request div.detail form.request fieldset input.email {
+  height: 1em;
+  padding: 13px 0;
+}
+                 
+.popover div#request div.detail form.request fieldset input.button {
+  left: .7em;
+}
+
+ .popover div#request div.detail form.request fieldset strong {
+  margin: -5px 0 0 10px;
+}
+
+#craftsman.topLeft {
+  background: url(css/BG-craftsman-top-left.gif) no-repeat 0 0;
+}
+
+#craftsman .topLeftMessage {
+  position: relative;
+  left: 5px;
+  top:30px;
+  padding: 5px 0 0 0;
+}
+
+.topRight {
+  background: url(css/BG-craftsman-top-right.gif) no-repeat 0 0;
+}
+
+#craftsman .topRightMessage {
+  position: relative;
+  right: 5px;
+  top: 30px;
+  padding: 5px 0 0 0;
+}                  
+
+.bottomLeft {
+  background: url(css/BG-craftsman-bottom-left.gif) no-repeat 0 0;
+}
+
+#craftsman .bottomLeftMessage {
+  position: relative;
+  left: 5px;
+  top:30px;
+  padding: 5px 0 0 0;
+}                  
+
+.bottomRight {
+  background: url(css/BG-craftsman-bottom-right.gif) no-repeat 0 0;
+}
+
+#craftsman .bottomRightMessage {
+  position: relative;
+  right: 5px;
+  top:30px;
+  padding: 5px 0 0 0;
+}
+
+/*=============================================================================
+ * contact page
+ *===========================================================================*/
+#contactContent div#join div.jobs a.back2top {
+  margin-top: 100px;
+}
+
+#contactContent div#join div.job a.back2top {
+  position: relative;
+  top: 35px;
+  right: 0;
+  padding: 3px 0 0 0;
+}
+
+#contactContent div#join div#needs ul.position li {
+  list-style-image: url("css/bullet-turn.png");
+}
+
+#contactContent div#sidebar div#follow h3 {
+  padding: 5px 0 0 0;
+}
+
+/*=============================================================================
+ * About page
+ *===========================================================================*/
