@@ -1,11 +1,4 @@
 cn:
-  sogoke: "手工客"
-  name: "名字"
-  description: "说点什么吧"
-  email: "邮箱"
-  avatar: "头像"
-  submit: "好了"
-  
   mongoid:
     errors:
       models:
@@ -13,7 +6,10 @@ cn:
           attributes:
             name:
               blank: 昵称不可为空
+              taken: 该昵称已被占用
             email:
               taken: 该邮箱已经申请过了
               blank: 邮箱不可为空
               invalid: 邮箱格式不对
+            avatar:
+              blank: 头像不可为空

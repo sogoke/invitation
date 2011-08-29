@@ -291,18 +291,7 @@ $(document).ready(function() {
       $('.popover').fadeOut(100);
   });
 
-  // When user focos on nickname input
-  $('.popover div#request div.detail form.request fieldset input.nickname').focusin(function() {
-      $(this).val('');
-  });
-
-  $('.popover div#request div.detail form.request fieldset input.email').focusin(function() {
-      $(this).val('');
-  });
-
-  $('.popover div#request div.detail form.request fieldset textarea.selfIntro').focusin(function() {
-      $(this).val('');
-  });
+	Placeholder.init();
 
   $('.popover div#request div.detail form.request fieldset textarea.selfIntro').keydown(function() {
       $('.popover div#request div.detail form.request fieldset strong.selfIntroError').hide();
