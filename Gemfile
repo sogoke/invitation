@@ -23,6 +23,9 @@ gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
 # Use thin as the web server
 gem 'thin'
 
+# Validates
+gem 'client_side_validations'
+
 # Deploy with Capistrano
 # gem 'capistrano'
 

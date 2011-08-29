@@ -43,30 +43,20 @@
             <div class="detail">
               <h4 class="title">申请邀请码</h4>
               <p class="caution">手工客内测中，并不对外开放，但我们欢迎对网站感兴趣的朋友加入！</p>
-
-              <form class="request">
-                <fieldset>
-                  <label for="nickname" class="nickname">昵称:</label>
-                  <input type="text" class="nickname" name="nickname" value="你的真实姓名，或网络昵称" /><strong class="nicknameError"><img src="assets/error.png" class="icon" alt="" /><span class="message">昵称不能为空</span></strong><br />
-                  <label for="avatar" class="avatar">头像:</label>
-                  <input type="file" class="avatar" />
-                  <strong class="avatarError"><img src="assets/error.png" class="icon" /><span class="message">头像是必须的</span></strong><br />
-                  <label for="email" class="email">邮箱:</label>
-                  <input type="email" class="email" name="email" value="你的常用邮箱地址，注册了就不能更改" />
-                  <strong class="emailError">
-                    <img src='assets/error.png' class="icon" alt="" />
-                    <span class="message">邮箱不能为空</span>
-                  </strong>
-                  <strong class="emailInvalid">
-                    <img src='assets/error.png' class="icon" alt="" />
-                    <span class="message">邮箱地址格式不对</span>
-                  </strong>
-                  <br />                      
-                  <label for="selfIntro" class="selfIntro">自我介绍:</label>
-                  <textarea class="selfIntro">介绍自己，让我们了解你，可以加上你常去的论坛ID，淘宝店铺、博客地址、微博等等</textarea><strong class="selfIntroError"><img src="assets/error.png" class="icon" alt="" /><span class="message">自我介绍不能为空</span></strong><strong class="selfIntroCounter"></strong><br />
-                  <input type="submit" class="button" value="申请邀请码" />
-                </fieldset>
-              </form>
+			
+			  <%= form_for @artist, html: {class: "request"} do |f| %>
+				<fieldset>
+				<%= f.label "昵称", class: "nickname" %>
+			  	<%= f.text_field :name, class: "nickname" %><br />
+				<%= f.label "头像", class: "avatar" %>
+			  	<%= f.file_field :avatar, class: "avatar" %><br />
+				<%= f.label "邮箱", class: "email" %>
+			  	<%= f.text_field :email, class: "email" %><br />
+				<%= f.label "自我介绍", class: "selfIntro" %>
+				<%= f.text_area :description, class: "selfIntro" %><br />
+				<%= f.submit "申请邀请码", class: "button" %>
+				<fieldset>
+			  <% end -%>
 
             </div><!-- detail -->
           </div><!-- content request -->
