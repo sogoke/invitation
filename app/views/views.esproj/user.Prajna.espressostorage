@@ -9,11 +9,11 @@
 		<key>ContentSize</key>
 		<string>{1106, 620}</string>
 		<key>ProjectURL</key>
-		<string>file://localhost/Users/Prajna/Projects/invitation/app/views/views.esproj/</string>
+		<string>file://localhost/Users/Prajna/Projects/invitation2/app/views/views.esproj/</string>
 		<key>StateType</key>
 		<string>ProjectWindow</string>
 		<key>TopLeftPoint</key>
-		<string>{87, 778}</string>
+		<string>{222, 778}</string>
 	</dict>
 	<key>com.macrabbit.Espresso.FileManager.DisclosureCollapsed</key>
 	<false/>
@@ -21,8 +21,8 @@
 	<dict>
 		<key>ExpandedURLs</key>
 		<array>
-			<string>file://localhost/Users/Prajna/Projects/invitation/app/views/home</string>
-			<string>file://localhost/Users/Prajna/Projects/invitation/app/views/layouts</string>
+			<string>file://localhost/Users/Prajna/Projects/invitation2/app/views/home</string>
+			<string>file://localhost/Users/Prajna/Projects/invitation2/app/views/layouts</string>
 		</array>
 	</dict>
 	<key>com.macrabbit.Espresso.Publisher.DisclosureCollapsed</key>
@@ -46,6 +46,24 @@
 			<dict>
 				<key>DocumentURL</key>
 				<string>file://localhost/Users/Prajna/Projects/invitation/app/views/home/index.html.erb</string>
+				<key>StateType</key>
+				<string>DefaultTab</string>
+			</dict>
+			<dict>
+				<key>DocumentURL</key>
+				<string>file://localhost/Users/Prajna/Projects/invitation2/app/views/home/index.html.erb</string>
+				<key>StateType</key>
+				<string>DefaultTab</string>
+			</dict>
+			<dict>
+				<key>DocumentURL</key>
+				<string>file://localhost/Users/Prajna/Projects/invitation2/app/views/home/about.html.erb</string>
+				<key>StateType</key>
+				<string>DefaultTab</string>
+			</dict>
+			<dict>
+				<key>DocumentURL</key>
+				<string>file://localhost/Users/Prajna/Projects/invitation2/app/views/home/join.html.erb</string>
 				<key>StateType</key>
 				<string>DefaultTab</string>
 			</dict>
