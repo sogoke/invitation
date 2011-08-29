@@ -2,4 +2,5 @@
 //= require raphael
 //= require placeholder
 //= require index
-//= require rails.validations
+//= require jquery.validate
+//= require validates
