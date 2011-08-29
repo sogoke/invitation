@@ -3,6 +3,6 @@ class ArtistsController < ApplicationController
     @artist = Artist.new(params[:artist])
     @artist.save!
     
-    redirect_to "/", notice: "successful"
+    redirect_to "/", notice: "#{@artist.email}"
   end
 end

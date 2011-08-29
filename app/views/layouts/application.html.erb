@@ -22,7 +22,10 @@
 	<%= yield %>
   </body>
 	<%= javascript_include_tag "application" %>
-	<% if flash[:notice] == "successful" %>
-		<script>$("#feedback").show();</script>
+	<% if flash[:notice] %>
+		<script>
+			$("#request").hide();
+			$(".popover, #feedback").fadeIn(100);
+		</script>
 	<% end -%>
 </html>
