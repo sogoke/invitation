@@ -4,5 +4,7 @@ Invitation::Application.routes.draw do
   get "/about" => "home#about"
   get "/join" => "home#join"
   
-  resources :artists, :only => [:create]
+  resources :artists, :only => [:create] do
+    get "/exist", on: :collection
+  end
 end

@@ -5,4 +5,10 @@ class ArtistsController < ApplicationController
     
     redirect_to "/", notice: "#{@artist.email}"
   end
+  
+  def exist
+    condition = {}
+    condition[params[:token]] = params[params[:token]]
+    render json: { exist: !Artist.exists?(conditions: condition) }
+  end
 end
