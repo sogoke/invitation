@@ -23,6 +23,10 @@ jQuery.validator.addMethod("userEmailUniqueness", function(value, element, param
 	  return checkUser("email", value);
 }, "Email is not unique");
 
+jQuery.validator.addMethod('userNameValid', function (value) { 
+    return /[\w\u4e00-\u9fa5]+/.test(value); 
+}, "wrong");
+
 $("form.request").validate({
 	 debug: true,
    onfocusout: function(element) { $(element).valid(); },
@@ -36,8 +40,10 @@ $("form.request").validate({
 	   "artist[name]": {
 		   required: true,
 		   minlength: 2,
+			 maxlength: 30,
 			 notEqual: "你的真实姓名，或网络昵称",
-			 userNameUniqueness: true
+			 userNameUniqueness: true,
+			 userNameValid: true
 		 },
 	   "artist[email]": {
 	     required: true,
@@ -54,9 +60,11 @@ $("form.request").validate({
 	 messages: {
 		 "artist[name]": {
 			 required: "<strong class='nicknameError' style='display: inline'><img src='assets/error.png' class='icon' /><span class='message'>昵称不能为空</span></strong>",
-			 minlength: "<strong class='nicknameError' style='display: inline'><img src='assets/error.png' class='icon' /><span class='message'>昵称长度应长于2</span></strong>",
+			 minlength: "<strong class='nicknameError' style='display: inline'><img src='assets/error.png' class='icon' /><span class='message'>昵称长度应大于2</span></strong>",
+			 maxlength: "<strong class='nicknameError' style='display: inline'><img src='assets/error.png' class='icon' /><span class='message'>昵称长度应小于30</span></strong>",
 			 notEqual: "<strong class='nicknameError' style='display: inline'><img src='assets/error.png' class='icon' /><span class='message'>昵称不可为空</span></strong>",
-			 userNameUniqueness: "<strong class='nicknameError' style='display: inline'><img src='assets/error.png' class='icon' /><span class='message'>昵称已被占用</span></strong>"
+			 userNameUniqueness: "<strong class='nicknameError' style='display: inline'><img src='assets/error.png' class='icon' /><span class='message'>昵称已被占用</span></strong>",
+			 userNameValid: "<strong class='nicknameError' style='display: inline'><img src='assets/error.png' class='icon' /><span class='message'>中英文、数字与下划线</span></strong>"
 		 },
 		 "artist[email]": {
 			 required: "<strong class='emailError' style='display: inline'><img src='assets/error.png' class='icon' /><span class='message'>邮箱不可为空</span></strong>",

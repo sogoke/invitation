@@ -7,7 +7,9 @@ cn:
             name:
               blank: 昵称不可为空
               taken: 该昵称已被占用
-              too_short: 昵称长度应长于2
+              too_short: 昵称长度应大于2
+              too_long: 昵称长度应小于30
+              invalid: 只可包含中英文、数字与下划线
             email:
               taken: 该邮箱已经申请过了
               blank: 邮箱不可为空

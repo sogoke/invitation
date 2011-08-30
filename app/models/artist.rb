@@ -7,9 +7,8 @@ class Artist
   field :email
   mount_uploader :avatar, AvatarUploader
   
-  validates :name, presence: true, uniqueness: true, length: { minimum: 2 }
-  validates :email, presence: true, uniqueness: true
-  validates_format_of :email, :with => /\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/
+  validates :name, presence: true, uniqueness: true, length: { within: 2..30 }, format: { with: /[\w\u4e00-\u9fa5]+/ }
+  validates :email, presence: true, uniqueness: true, format: { with: /\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/ }
   
   scope :visible, where(:avatar.exists => true).not_in(:description => ["", nil])
 end
