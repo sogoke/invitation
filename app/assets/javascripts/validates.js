@@ -41,6 +41,9 @@ $("form.request").validate({
 	   },
 		 "artist[description]": {
 			 maxlength: 140
+		 },
+		 "artist[avatar]": {
+			 accept: "jpg|jpeg|gif|png"
 		 }
 	 },
 	 messages: {
@@ -57,6 +60,9 @@ $("form.request").validate({
 		 },
 		 "artist[description]": {
 			 maxlength: ""
+		 },
+		 "artist[avatar]": {
+			 accept: "<strong class='avatarError' style='display: inline'><img src='assets/error.png' class='icon' /><span class='message'>图片格式不对</span></strong>"
 		 }
 	 }
 });
