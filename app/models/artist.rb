@@ -9,6 +9,7 @@ class Artist
   
   validates :name, presence: true, uniqueness: true
   validates :email, presence: true, uniqueness: true
-  #validates :avatar, presence: true
   validates_format_of :email, :with => /\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/
+  
+  scope :visible, where(:description.exists => true, :avatar.exists => true)
 end

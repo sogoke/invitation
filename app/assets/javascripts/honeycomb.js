@@ -14,26 +14,16 @@ var BOTTOM_BLACKLIST = ['00','10','20','30','40','50','60','120','130','140','15
   '04','44','204',
   '05','15','25','35','45','45','55','115','125','135','145','155','165','195','205','215','225','235','245','255','265',
   '06','16','26','36','46','56','56','66','76','86','116','126','136','146','156','166','176','186','196','206','216','226','236','246','256','266'];
-var BOTTOM_IMAGES = ['assets/tube/bottom/tube0.png','assets/tube/bottom/tube1.png', 'assets/tube/bottom/tube2.png', 'assets/tube/bottom/tube3.png', 
-  'assets/tube/bottom/tube4.png','assets/tube/bottom/tube5.png', 'assets/tube/bottom/tube6.png', 'assets/tube/bottom/tube7.png'];
 
 var MIDDLE_TUBE_SIZE = 60 + 12;
 var MIDDLE_BLACKLIST = ['00','10','20','30','40','80','90','100','110','120','130','140','150','160','170',
   '01','121','131',
   '03','13','123','132','133','173'];
-var  MIDDLE_IMAGES = ['assets/tube/middle/tube0.png','assets/tube/middle/tube1.png', 'assets/tube/middle/tube2.png', 'assets/tube/middle/tube3.png', 
-  'assets/tube/middle/tube4.png','assets/tube/middle/tube5.png', 'assets/tube/middle/tube6.png', 'assets/tube/middle/tube7.png'];
 
 var TOP_TUBE_SIZE = 80;
 var TOP_BLACKLIST = ['00','10','20','70','80','90','100','110','120',
   '01','11','81','91','101','111', '121',
   '02','12','22','72','82','92','102','112','122'];
-var TOP_IMAGESs = ['assets/tube/top/tube0.png','assets/tube/top/tube1.png', 'assets/tube/top/tube2.png', 'assets/tube/top/tube3.png', 
-  'assets/tube/top/tube4.png','assets/tube/top/tube5.png', 'assets/tube/top/tube6.png', 'assets/tube/top/tube7.png'];
-
-// ONLY FOR TESTING
-var NAME = 'shy';
-var MESSAGE = '三点多参加完活动出来，发现中午开始的小雨已经下大了，冒雨在几个地点之间来回犹豫步行40多分钟，还忘了带上外套的帽子。决定坐上公交再说了。三元桥下来，走到霄云路上，终于看见一辆挂着红色“空车”二字小灯的出租，却原来拉我也算是顺路，开车的大姐急着去接上高三的女儿回家。办了一些事情之';
 
 var SELFINTRO_LENGTH = 140;
 ///////////////////////////////////////////////////////////////////////////////
@@ -90,17 +80,17 @@ function setTube(level, x, y, name, avatar, message) {
     width = height = 48;
     left = (48 * x) + Math.randInt(offset_level0);
     top = (48 * y) + Math.randInt(offset_level0) + 35;
-    tube = paper.image(BOTTOM_IMAGES[Math.randInt(BOTTOM_IMAGES.length)], left, top, width, height);
+    tube = paper.image(avatar, left, top, width, height);
   } else if (level == 1) {
     width = height = 60;
     left = (60 * x) + Math.randInt(offset_level1);
     top = (60 * y) + Math.randInt(offset_level1) + 35;
-    tube = paper.image(MIDDLE_IMAGES[Math.randInt(MIDDLE_IMAGES.length)], left, top, width, height);
+    tube = paper.image(avatar, left, top, width, height);
   } else if (level == 2) {
     width = height = 80;
     left = (80 * x) + Math.randInt(offset_level2);
     top = (80 * y) + Math.randInt(offset_level2) + 35;
-    tube = paper.image(TOP_IMAGESs[Math.randInt(TOP_IMAGESs.length)], left, top, width, height);
+    tube = paper.image(avatar, left, top, width, height);
   } else {
   }
 
@@ -154,7 +144,7 @@ function setTube(level, x, y, name, avatar, message) {
     $(tube.node).mouseenter(function(event) {
         event.stopImmediatePropagation();
         event.stopPropagation();
-        craftsman = getCraftsman(tube, MESSAGE, NAME);
+        craftsman = getCraftsman(tube, message, name);
         if (outstanding !== undefined) {outstanding.animate({'scale': 1}, DURATION, 'elastic').toBottom();}
         tube.toFront();
 
@@ -181,7 +171,7 @@ function setTube(level, x, y, name, avatar, message) {
     $(tube.node).mouseenter(function(event) {
         event.stopImmediatePropagation();
         event.stopPropagation();          
-        craftsman = getCraftsman(tube, MESSAGE, NAME);
+        craftsman = getCraftsman(tube, message, name);
         if (outstanding !== undefined) {outstanding.animate({'scale': 1}, DURATION, 'elastic').toBottom();}
         tube.toTop();
         if (paper.top === tube) {
@@ -206,7 +196,7 @@ function setTube(level, x, y, name, avatar, message) {
 
   } else if (level === 2) {
     tube.mouseover(function() {
-        craftsman = getCraftsman(this, MESSAGE, NAME);
+        craftsman = getCraftsman(this, message, name);
         tube.attr({'cursor':'pointer'}).animate({'scale': 1.5}, DURATION, 'elastic').toTop();
         if (!this.timer) {
           this.timer = setTimeout(function() {
@@ -255,22 +245,40 @@ $(document).ready(function() {
       /////////////////////////////////////////////////////////////////////
       // Draw the honeycomb
       ////////////////////////////////////////////////////////////////////
-      // 1st level
-      for (i = 0; i < bottomX; i++) {
-        for (j = 0; j < bottomY; j++) {
-          if($.inArray(i + '' + j, BOTTOM_BLACKLIST) < 0) {
-            setTube(0, i, j);
-          }
-        }
-      }
-
-      for (i = 0; i < middleX; i++) {
-        for (j = 0; j < middleY; j++) {
-          if ($.inArray(i + '' + j, MIDDLE_BLACKLIST) < 0) {
-            setTube(1, i, j);
-          }
-        }
-      }            
+			$.ajax({
+			  url: "/artists/visible",
+				dataType: 'json',
+			  success: function( artists ){
+				    // 1st level
+				    for (i = 0; i < bottomX; i++) {
+			        for (j = 0; j < bottomY; j++) {
+			          if($.inArray(i + '' + j, BOTTOM_BLACKLIST) < 0) {
+									artist = artists.pop();
+									if( artist ) {
+			                setTube(0, i, j, artist["name"], artist["avatar"], artist["description"]);
+								  } else {
+									    setTube(0, i, j, "手工客", "assets/tube/middle/tube5.png", "等你来");
+								  }
+			          }
+			        }
+			      }
+						
+						// 2nd level
+			      for (i = 0; i < middleX; i++) {
+			        for (j = 0; j < middleY; j++) {
+			          if ($.inArray(i + '' + j, MIDDLE_BLACKLIST) < 0) {
+			            artist = artists.pop();
+									if( artist ) {
+			                setTube(0, i, j, artist["name"], artist["avatar"], artist["description"]);
+								  }else {
+								      setTube(0, i, j, "手工客", "assets/tube/middle/tube5.png", "等你来");
+								  }
+			          }
+			        }
+			      }
+				}
+			});
+            
 
       /*
       // 3rd level
