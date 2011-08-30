@@ -16,7 +16,6 @@ class ArtistsController < ApplicationController
     result = Artist.visible.map do |artist|
       { name: artist.name, avatar: artist.avatar.url(:thumb), description: artist.description }
     end
-    p result.inspect
     render json: result
   end
 end

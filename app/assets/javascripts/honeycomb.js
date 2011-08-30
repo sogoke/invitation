@@ -249,6 +249,20 @@ $(document).ready(function() {
 			  url: "/artists/visible",
 				dataType: 'json',
 			  success: function( artists ){
+				    // 2nd level
+			      for (i = 0; i < middleX; i++) {
+			        for (j = 0; j < middleY; j++) {
+			          if ($.inArray(i + '' + j, MIDDLE_BLACKLIST) < 0) {
+			            artist = artists.pop();
+									if( artist ) {
+			                setTube(0, i, j, artist["name"], artist["avatar"], artist["description"]);
+								  }else {
+								      setTube(0, i, j, "手工客", "assets/tube/middle/tube5.png", "等你来");
+								  }
+			          }
+			        }
+			      }
+				
 				    // 1st level
 				    for (i = 0; i < bottomX; i++) {
 			        for (j = 0; j < bottomY; j++) {
@@ -258,20 +272,6 @@ $(document).ready(function() {
 			                setTube(0, i, j, artist["name"], artist["avatar"], artist["description"]);
 								  } else {
 									    setTube(0, i, j, "手工客", "assets/tube/middle/tube5.png", "等你来");
-								  }
-			          }
-			        }
-			      }
-						
-						// 2nd level
-			      for (i = 0; i < middleX; i++) {
-			        for (j = 0; j < middleY; j++) {
-			          if ($.inArray(i + '' + j, MIDDLE_BLACKLIST) < 0) {
-			            artist = artists.pop();
-									if( artist ) {
-			                setTube(0, i, j, artist["name"], artist["avatar"], artist["description"]);
-								  }else {
-								      setTube(0, i, j, "手工客", "assets/tube/middle/tube5.png", "等你来");
 								  }
 			          }
 			        }

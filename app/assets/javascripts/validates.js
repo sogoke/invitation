@@ -26,7 +26,12 @@ jQuery.validator.addMethod("userEmailUniqueness", function(value, element, param
 $("form.request").validate({
 	 debug: true,
    onfocusout: function(element) { $(element).valid(); },
-   submitHandler: function(form) { form.submit(); },
+   submitHandler: function(form) { 
+	     if($("#artist_description").val() === "介绍自己，让我们了解你，可以加上你常去的论坛ID，淘宝店铺、博客地址、微博等等"){
+	         $("#artist_description").val("");
+	     }
+	     form.submit(); 
+	 },
 	 rules: {
 	   "artist[name]": {
 		   required: true,
@@ -49,7 +54,7 @@ $("form.request").validate({
 	 messages: {
 		 "artist[name]": {
 			 required: "<strong class='nicknameError' style='display: inline'><img src='assets/error.png' class='icon' /><span class='message'>昵称不能为空</span></strong>",
-			 minlength: "<strong class='nicknameError' style='display: inline'><img src='assets/error.png' class='icon' /><span class='message'>长度应大于2</span></strong>",
+			 minlength: "<strong class='nicknameError' style='display: inline'><img src='assets/error.png' class='icon' /><span class='message'>昵称长度应长于2</span></strong>",
 			 notEqual: "<strong class='nicknameError' style='display: inline'><img src='assets/error.png' class='icon' /><span class='message'>昵称不可为空</span></strong>",
 			 userNameUniqueness: "<strong class='nicknameError' style='display: inline'><img src='assets/error.png' class='icon' /><span class='message'>昵称已被占用</span></strong>"
 		 },
