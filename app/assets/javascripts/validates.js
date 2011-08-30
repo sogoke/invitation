@@ -24,7 +24,7 @@ jQuery.validator.addMethod("userEmailUniqueness", function(value, element, param
 }, "Email is not unique");
 
 jQuery.validator.addMethod('userNameValid', function (value) { 
-    return /[\w\u4e00-\u9fa5]+/.test(value); 
+    return /^[\w\u4e00-\u9fa5]+$/.test(value); 
 }, "wrong");
 
 $("form.request").validate({
