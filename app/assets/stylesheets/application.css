@@ -10,6 +10,7 @@
 
 
 
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -419,7 +420,7 @@ input#applyButton {
 #craftsman .topRightName {
   position: absolute;
   top: 145px;
-  left: 200px;
+  right: 80px;
   font-family: "MS Yahei";
   font-size:30px;
   color: #d45500;
