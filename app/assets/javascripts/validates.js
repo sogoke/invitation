@@ -28,7 +28,6 @@ jQuery.validator.addMethod('userNameValid', function (value) {
 }, "wrong");
 
 $("form.request").validate({
-	 debug: true,
    onfocusout: function(element) { $(element).valid(); },
    submitHandler: function(form) { 
 	     if($("#artist_description").val() === "介绍自己，让我们了解你，可以加上你常去的论坛ID，淘宝店铺、博客地址、微博等等"){

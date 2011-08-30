@@ -95,7 +95,7 @@ function setTube(level, x, y, name, avatar, message) {
   }
 
   tube.toTop = function() {
-    var   paper = this.paper;
+    var paper = this.paper;
     if (this.removed || paper.top === this) {
       return this;
     }
@@ -257,7 +257,7 @@ $(document).ready(function() {
 									if( artist ) {
 			                setTube(0, i, j, artist["name"], artist["avatar"], artist["description"]);
 								  }else {
-								      setTube(0, i, j, "手工客", "assets/tube/middle/tube5.png", "等你来");
+								      setTube(0, i, j, "手工客", "assets/tube/default.png", "等你来");
 								  }
 			          }
 			        }
@@ -271,7 +271,7 @@ $(document).ready(function() {
 									if( artist ) {
 			                setTube(0, i, j, artist["name"], artist["avatar"], artist["description"]);
 								  } else {
-									    setTube(0, i, j, "手工客", "assets/tube/middle/tube5.png", "等你来");
+									    setTube(0, i, j, "手工客", "assets/tube/default.png", "等你来");
 								  }
 			          }
 			        }
