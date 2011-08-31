@@ -311,7 +311,7 @@ $(document).ready(function() {
           for (j = 0; j < bottomOrder.length; j++) {
             x = bottomOrder[j][0];
             y = bottomOrder[j][1];
-            artist = artists.pop();
+            artist = artists[88+j];
             if( artist ) {
               bottomTubeSet.push(setTube(0, x, y, artist["name"], artist["avatar"], artist["description"]));
             }else {
@@ -323,7 +323,7 @@ $(document).ready(function() {
           for (i = 0; i < middleOrder.length; i++) {
             x = middleOrder[i][0];
             y = middleOrder[i][1];
-            artist = artists.pop();
+            artist = artists[i];
             if( artist ) {
               middleTubeSet.push(setTube(1, x, y, artist["name"], artist["avatar"], artist["description"]));
             } else {
