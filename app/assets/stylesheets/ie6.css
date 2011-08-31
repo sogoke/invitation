@@ -4,15 +4,26 @@
  * Global
  *****************************************************************************/
 body {
+  background: #fcfcfc;
 }
 
 #footer small {
-  padding: 8px 0 0 0;
+  height: 1em;
+  padding: 3px 0 5px 0;
 }
 
 /*=============================================================================
  * index page
  *===========================================================================*/
+#apply p.detail {
+  width: 270px;
+}
+
+td#grow p.explain {
+  position: relative;
+  top: 3px;
+}
+
 .popover {
   position: absolute;
   background: transparent;
@@ -130,13 +141,16 @@ body {
 }
 
 #contactContent div#join div#needs ul.position li {
-  list-style-image: url("../img/css/bullet-turn.png") no-repeat 0 0;
+  list-style-image: url(css/bullet-turn.png) no-repeat 0 0;
 }
 
 #contactContent div#sidebar div#follow h3 {
   padding: 5px 0 0 0;
 }
 
+#sidebar div#recommend div.description p {
+  line-height: 1.2em;
+}
 /*=============================================================================
  * About page
  *===========================================================================*/
