@@ -286,54 +286,52 @@ $(document).ready(function() {
         bottomTubeSet = paper.set(),
         middleTubeSet = paper.set();
 
-      //////////////////////////////////////////////////////////////////
-      // Adjust speed of honeycomb animation
-      //////////////////////////////////////////////////////////////////
-      if ($.browser.msie && $.browser.version === 6.0) {
-      } else if ($.browser.msie && $.browser.version === 7.0) {
-      } else if ($.browser.msie && $.browser.version === 8.0) {
-      } else if ($.browser.mozilla) {
-        DURATION = 600;
-      } else if ($.browser.opera) {
-        DURATION = 3000;
-        WAITING = 2000;
-      }
+    //////////////////////////////////////////////////////////////////
+    // Adjust speed of honeycomb animation
+    //////////////////////////////////////////////////////////////////
+    if ($.browser.msie && $.browser.version === 6.0) {
+    } else if ($.browser.msie && $.browser.version === 7.0) {
+    } else if ($.browser.msie && $.browser.version === 8.0) {
+    } else if ($.browser.mozilla) {
+      DURATION = 600;
+    } else if ($.browser.opera) {
+      DURATION = 3000;
+      WAITING = 2000;
+    }
 
-      /////////////////////////////////////////////////////////////////////
-      // Draw the honeycomb
-      /////////////////////////////////////////////////////////////////////
-      $.ajax({
-          url: "/artists/visible",
-          dataType: 'json',
-          success: function( artists ){
+    /////////////////////////////////////////////////////////////////////
+    // Draw the honeycomb
+    /////////////////////////////////////////////////////////////////////
+    $.ajax({
+        url: "/artists/visible",
+        dataType: 'json',
+        success: function( artists ){
 
-            // bottom level
-            for (i = 0; i < bottomOrder.length; i++) {
-              x = bottomOrder[i][0];
-              y = bottomOrder[i][1];
-              artist = artists.pop();
-              if( artist ) {
-                bottomTubeSet.push(setTube(0, x, y, artist["name"], artist["avatar"], artist["description"]));
-              } else {
-                bottomTubeSet.push(setTube(0, x, y, "手工客", "assets/tube/default/" + Math.randInt(DEFAULT_TUBE_NUMBER) + ".png", "等你来"));
-              }
-            }
-
-            // middle level
-            for (j = 0; j < middleOrder.length; j++) {
-              x = middleOrder[j][0];
-              y = middleOrder[j][1];
-              artist = artists.pop();
-              if( artist ) {
-                middleTubeSet.push(setTube(1, x, y, artist["name"], artist["avatar"], artist["description"]));
-              }else {
-                middleTubeSet.push(setTube(1, x, y, "手工客", "assets/tube/default/" + Math.randInt(DEFAULT_TUBE_NUMBER) + ".png", "等你来"));
-              }
+          // botom level
+          for (j = 0; j < bottomOrder.length; j++) {
+            x = bottomOrder[j][0];
+            y = bottomOrder[j][1];
+            artist = artists.pop();
+            if( artist ) {
+              bottomTubeSet.push(setTube(0, x, y, artist["name"], artist["avatar"], artist["description"]));
+            }else {
+              bottomTubeSet.push(setTube(0, x, y, "手工客", "assets/tube/default/" + Math.randInt(DEFAULT_TUBE_NUMBER) + ".png", "等你来"));
             }
           }
-      });
 
-      // order tubes in the right way
-      bottomTubeSet.toFront();
-      middleTubeSet.toBack();
-  });
+          // middle level
+          for (i = 0; i < middleOrder.length; i++) {
+            x = middleOrder[i][0];
+            y = middleOrder[i][1];
+            artist = artists.pop();
+            if( artist ) {
+              middleTubeSet.push(setTube(1, x, y, artist["name"], artist["avatar"], artist["description"]));
+            } else {
+              middleTubeSet.push(setTube(1, x, y, "手工客", "assets/tube/default.png", "等你来"));
+            }
+          }
+
+        }
+    });
+
+});

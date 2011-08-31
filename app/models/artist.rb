@@ -10,5 +10,5 @@ class Artist
   validates :name, presence: true, uniqueness: true, length: { within: 2..30 }, format: { with: /^[\w\u4e00-\u9fa5]+$/ }
   validates :email, presence: true, uniqueness: true, format: { with: /\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/ }
   
-  scope :visible, where(:avatar.exists => true).not_in(:description => ["", nil]).limit(120)
+  scope :visible, where(:avatar.exists => true).not_in(:description => ["", nil]).limit(138)
 end
