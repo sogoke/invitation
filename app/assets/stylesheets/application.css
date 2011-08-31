@@ -8,6 +8,7 @@
    License: none (public domain)
 */
 
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -396,7 +397,7 @@ input#applyButton {
   position: absolute;
   top: 145px;
   right: 30px;
-  font-family: "MS Yahei";
+  font-family: "Microsoft YaHei";
   font-size:35px;
   color: #d45500;
   width: auto;
@@ -420,7 +421,7 @@ input#applyButton {
   position: absolute;
   top: 145px;
   right:80px;
-  font-family: "MS Yahei";
+  font-family: "Microsoft YaHei";
   font-size:30px;
   color: #d45500;
   width: auto;
@@ -444,7 +445,7 @@ input#applyButton {
   position: absolute;
   top: 145px;
   right: 30px;
-  font-family: "MS Yahei";
+  font-family: "Microsoft YaHei";
   font-size:30px;
   color: #d45500;
   width: auto;
@@ -468,7 +469,7 @@ input#applyButton {
   position: absolute;
   top: 145px;
   right: 80px;
-  font-family: "MS Yahei";
+  font-family: "Microsoft YaHei";
   font-size:30px;
   color: #d45500;
   width: auto;
@@ -713,7 +714,7 @@ input#applyButton {
   padding-bottom: 8px;
   font-size: 25px;
   width: 970px;
-  font-family: "MS YaHei";
+  font-family: "Microsoft YaHei";
   border-bottom: 1px solid #eeeeee;
 }
 
