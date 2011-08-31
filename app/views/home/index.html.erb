@@ -68,3 +68,10 @@
             <img class="feedbackClose" src="assets/popoverClose.png" alt="" />  
           </div><!-- content feedback -->
         </div><!-- popover -->
+		<%= javascript_include_tag "application" %>
+		<% if flash[:notice] %>
+			<script>
+				$("#request").hide();
+				$(".popover, #feedback").fadeIn(100);
+			</script>
+		<% end -%>
