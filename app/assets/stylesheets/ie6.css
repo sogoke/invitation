@@ -33,7 +33,7 @@ td#grow p.explain {
 }
 
 .popover div#feedback {
-  background: url(../img/css/BG-feedback.gif) no-repeat center center;
+  background: url(css/BG-feedback.gif) no-repeat center center;
   z-index: 8;
 }
 
