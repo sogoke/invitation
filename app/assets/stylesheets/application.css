@@ -8,9 +8,6 @@
    License: none (public domain)
 */
 
-
-
-
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -63,7 +60,7 @@ body {
   width:100%;
   min-width: 1000px;
   height: 100%;
-  font-family: Arial, Helvetica, Verdana, sans-serif;
+  font-family: "Arial", "Helvetica", "Verdana", "Tahoma", sans-serif;
   font-size: 14px;
   background: #fcfcfc;
   margin: 0;
@@ -97,7 +94,7 @@ a:visited {
  *********************************************************/
 #header {
   width: auto;
-  height: 150px;
+  height: 95px;
   position: relative;
   top: 30px;
   left: 0px;
@@ -132,7 +129,7 @@ a:visited {
   width: auto;
   height: 40px;
   position: relative;
-  background-color: #f6f6f6;
+  background-color: #EBEBEB;
   color: #999;
   font-size: 12px;
 }
@@ -151,7 +148,7 @@ a:visited {
 #footer small#links {
   float: right;
   clear: right;
-  margin-right: 20px;
+  margin-right: 30px;
 }
 
 #footer small#links a {
@@ -170,7 +167,7 @@ a:visited {
  *****************************************************************************/
 #honeycomb {
   position: relative;
-  top: 0px;
+  top: 5px;
   left: 0;
   width: 1000px;
   height: 380px;
@@ -179,8 +176,8 @@ a:visited {
 #indexContent {
   position: relative;
   width: auto;
-  height: 239px;
-  top: 50px;
+  height: 237px;
+  top: 30px;
 }
 
 #introduction {
@@ -228,6 +225,7 @@ td.value p.explain {
   color: #333333;
   font-size: 13px;
   margin-top: 8px;
+  line-height: 1.5em;
 }
 
 td#discover {
@@ -250,12 +248,12 @@ td#grow {
  ***********************************************/
 #apply {
   width: 304px;
-  height: 200px;
+  height: 230px;
   position: absolute;
-  top: -13px;
+  top: -25px;
   left: 695px;
   right: 0;
-  background-color: #e3d8d0;
+  background-color: #F2ECE9;
   display: block;
   font-size: 12px;
   border-top: 1px solid #f3f3f3;
@@ -274,14 +272,15 @@ td#grow {
 
 #apply p.detail {
   position: relative;
-  top: 52px;
-  left: 15px;
+  top: 55px;
+  left: 16px;
   max-width: 280px;
   height: auto;
   margin: 0;
   padding: 0;
   font-size: 1.2em;
-  color: #999999;
+  color: #4d4d4d;
+  line-height: 1.5em;
 }             
 
 input.button{
@@ -297,7 +296,7 @@ input.button{
 
 input#applyButton {
   position: relative;
-  top: 85px;
+  top: 88px;
   left: 98px;
 }                  
 
@@ -420,7 +419,7 @@ input#applyButton {
 #craftsman .topRightName {
   position: absolute;
   top: 145px;
-  right: 80px;
+  right:80px;
   font-family: "MS Yahei";
   font-size:30px;
   color: #d45500;
@@ -505,7 +504,7 @@ input#applyButton {
   position: relative;
   width: 660px;
   height: auto;
-  top: 100px;
+  top: 98px;
   left: 50%;
   margin: 0 0 0 -330px;
   background: #ffffff;
@@ -712,13 +711,18 @@ input#applyButton {
 
 #aboutContent div#about h3#aboutUS {
   padding-bottom: 8px;
-  font-size: 24px;
+  font-size: 25px;
   width: 970px;
+  font-family: "MS YaHei";
   border-bottom: 1px solid #eeeeee;
 }
 
 #aboutContent div#about div#hope {
     margin-top: 15px;
+}
+
+#aboutContent div#about div#hope p {
+  line-height: 1.5em;
 }
 
 #aboutContent div#about p.title {
@@ -727,6 +731,7 @@ input#applyButton {
 }
 
 #aboutContent div#about p.email {
+  margin: 18px 0 0 0;
   font-size: 14px;
   font-weight: bold;
 }
@@ -754,7 +759,7 @@ input#applyButton {
   width: 700px;
   font-family:"Microsoft YaHei";
   padding-bottom: 8px;
-  font-size: 24px;
+  font-size: 25px;
   border-bottom: 1px solid #eeeeee;
 }
 
@@ -764,6 +769,7 @@ input#applyButton {
   margin: 15px 0 0 0;
   padding-bottom: 8px;
   border-bottom: 1px solid #eeeeee;
+  line-height: 18px;
 }
 
 #join div#needs {
@@ -780,7 +786,7 @@ input#applyButton {
 }                          
 
 #join div#needs ul.position li:hover {
-  list-style-image: url("css/bullet-turn.png");
+  list-style-image: url("css/bullet-turn.png") no-repeat 0 0;
 }
 
 #join div#needs ul.position li a.scroll {
@@ -796,7 +802,7 @@ input#applyButton {
 }
 
 #join div#needs li {
-  list-style-image: url("css/bullet.png");
+  list-style-image: url("css/bullet.png") no-repeat 0 0;
 }
 
 #join div.job {
@@ -808,7 +814,7 @@ input#applyButton {
 }
 
 #join div.job li {
-  list-style-image: url("css/bullet.png");
+  list-style-image: url("css/bullet.png") no-repeat 0 0;
   margin-left: 10px;
 }
 
@@ -898,11 +904,12 @@ input#applyButton {
   text-decoration: none;
 }
 
-#sidebar div#recommend h4 {
+#sidebar div#recommend h4.title {
   position: relative;
   top: 10px;
   left: 10px;
   font-size: 24px;
+  color: #666666;
 }
 
 #sidebar div#recommend img.cover {
@@ -915,8 +922,11 @@ input#applyButton {
   left: 114px;
   font-size: 12px;
   color: #838383;
-  line-height: 1em;
   height: 0px;
+}
+
+#sidebar div#recommend div.description p {
+  line-height: 1.4em;
 }
 
 #sidebar img.label {

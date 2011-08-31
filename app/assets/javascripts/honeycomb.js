@@ -1,11 +1,12 @@
 ///////////////////////////////////////////////////////////////////////////
 // Global Constants
 ///////////////////////////////////////////////////////////////////////////
-var WIDTH = 1000, HEIGHT = 380;
+var WIDTH = 1000, HEIGHT = 400;
 var VISUAL_WIDTH = 1000, VISUAL_HEIGHT = 300;
 
 var DURATION = 2400, WAITING = 600;
 
+var DEFAULT_TUBE_NUMBER = 7;
 var BOTTOM_TUBE_SIZE = 48;
 var BOTTOM_BLACKLIST = ['00','10','20','30','40','50','60','120','130','140','150','160','170','180','190','200','210','220','230','240','250','260',
   '01','131','141','191','201','211','241','251','261',
@@ -39,6 +40,19 @@ var paper = Raphael('honeycomb', WIDTH, HEIGHT);
 Math.randInt = function(factor) {
   return Math.floor(Math.random(0, 1) * factor);
 };
+
+function getOrder(level) {
+  var order = [], x, y, i, j,
+        bottomX = Math.floor(WIDTH / BOTTOM_TUBE_SIZE),
+        bottomY = Math.floor(VISUAL_HEIGHT / BOTTOM_TUBE_SIZE),
+        middleX = Math.floor(WIDTH / MIDDLE_TUBE_SIZE),
+        middleY = Math.floor(VISUAL_HEIGHT / MIDDLE_TUBE_SIZE),  // reduce the horizontal line
+        topX = Math.floor(WIDTH / BOTTOM_TUBE_SIZE),
+        topY = Math.floor(VISUAL_HEIGHT / TOP_TUBE_SIZE);              
+
+
+  return order;
+}
 
 function getCraftsman(tube, message, name) {
   var craftsman = {},
@@ -141,12 +155,14 @@ function setTube(level, x, y, name, avatar, message) {
   };
 
   if (level === 0) {
-    $(tube.node).mouseenter(function(event) {
-        event.stopImmediatePropagation();
-        event.stopPropagation();
+    tube.mouseover(function(event) {
+        if ($.browser.mozlla)  {
+          event.stopImmediatePropagation();
+          event.stopPropagation();
+        }                            
         craftsman = getCraftsman(tube, message, name);
         if (outstanding !== undefined) {outstanding.animate({'scale': 1}, DURATION, 'elastic').toBottom();}
-        tube.toFront();
+        tube.toTop();
 
         if (paper.top === tube) {
           tube.attr({'cursor':'pointer'}).animate({scale: [2.5, 2.5]}, DURATION, 'elastic');
@@ -158,9 +174,11 @@ function setTube(level, x, y, name, avatar, message) {
           }, WAITING);
     });
 
-    $(tube.node).mouseleave(function() {
-        event.stopImmediatePropagation();
-        event.stopPropagation();          
+    tube.mouseout(function(event) {
+        if ($.browser.mozlla)  {
+          event.stopImmediatePropagation();
+          event.stopPropagation();
+        }
         if (hasCraftman) {$('#craftsman').hide(); hasCraftman = false;}
         if (timer) {clearTimeout(timer);}
         if (outstanding !== undefined) {outstanding.animate({'scale': 1}, DURATION, 'elastic').toBottom();} 
@@ -168,9 +186,11 @@ function setTube(level, x, y, name, avatar, message) {
     });
 
   } else if (level === 1) {
-    $(tube.node).mouseenter(function(event) {
-        event.stopImmediatePropagation();
-        event.stopPropagation();          
+    tube.mouseover(function(event) {
+        if ($.browser.mozlla)  {
+          event.stopImmediatePropagation();
+          event.stopPropagation();
+        }                            
         craftsman = getCraftsman(tube, message, name);
         if (outstanding !== undefined) {outstanding.animate({'scale': 1}, DURATION, 'elastic').toBottom();}
         tube.toTop();
@@ -184,9 +204,11 @@ function setTube(level, x, y, name, avatar, message) {
           }, WAITING);
     });
 
-    $(tube.node).mouseleave(function(event) {
-        event.stopImmediatePropagation();
-        event.stopPropagation();          
+    tube.mouseout(function(event) {
+        if ($.browser.mozlla)  {
+          event.stopImmediatePropagation();
+          event.stopPropagation();
+        }                     
         if (hasCraftman) {$('#craftsman').hide(); hasCraftman = false;}
         if (outstanding !== undefined) {outstanding.animate({'scale': 1}, DURATION, 'elastic').toBottom();}
         if (timer) {clearTimeout(timer);
@@ -221,7 +243,9 @@ function setTube(level, x, y, name, avatar, message) {
 ///////////////////////////////////////////////////////////////////////////
 // Initialize
 $(document).ready(function() {
-    var i, j,
+    var i, j, 
+        bottomTubeSet = paper.set(), 
+        middleTubeSet = paper.set(),
         bottomX = Math.floor(WIDTH / BOTTOM_TUBE_SIZE),
         bottomY = Math.floor(VISUAL_HEIGHT / BOTTOM_TUBE_SIZE),
         middleX = Math.floor(WIDTH / MIDDLE_TUBE_SIZE),
@@ -245,40 +269,41 @@ $(document).ready(function() {
       /////////////////////////////////////////////////////////////////////
       // Draw the honeycomb
       ////////////////////////////////////////////////////////////////////
-			$.ajax({
-			  url: "/artists/visible",
-				dataType: 'json',
-			  success: function( artists ){
-				    // 2nd level
-			      for (i = 0; i < middleX; i++) {
-			        for (j = 0; j < middleY; j++) {
-			          if ($.inArray(i + '' + j, MIDDLE_BLACKLIST) < 0) {
-			            artist = artists.pop();
-									if( artist ) {
-			                setTube(0, i, j, artist["name"], artist["avatar"], artist["description"]);
-								  }else {
-								      setTube(0, i, j, "手工客", "assets/tube/default.png", "等你来");
-								  }
-			          }
-			        }
-			      }
-				
-				    // 1st level
-				    for (i = 0; i < bottomX; i++) {
-			        for (j = 0; j < bottomY; j++) {
-			          if($.inArray(i + '' + j, BOTTOM_BLACKLIST) < 0) {
-									artist = artists.pop();
-									if( artist ) {
-			                setTube(0, i, j, artist["name"], artist["avatar"], artist["description"]);
-								  } else {
-									    setTube(0, i, j, "手工客", "assets/tube/default.png", "等你来");
-								  }
-			          }
-			        }
-			      }
-				}
-			});
-            
+      $.ajax({
+          url: "/artists/visible",
+          dataType: 'json',
+          success: function( artists ){
+
+            // 1st level
+            for (i = 0; i < bottomX; i++) {
+              for (j = 0; j < bottomY; j++) {
+                if($.inArray(i + '' + j, BOTTOM_BLACKLIST) < 0) {
+                  artist = artists.pop();
+                  if( artist ) {
+                    bottomTubeSet.push(setTube(0, i, j, artist["name"], artist["avatar"], artist["description"]));
+                  } else {
+                    bottomTubeSet.push(setTube(0, i, j, "手工客", "assets/tube/default/" + Math.randInt(DEFAULT_TUBE_NUMBER) + ".png", "等你来"));
+                  }
+                }
+              }
+            }
+
+            // 2nd level
+            for (i = 0; i < middleX; i++) {
+              for (j = 0; j < middleY; j++) {
+                if ($.inArray(i + '' + j, MIDDLE_BLACKLIST) < 0) {
+                  artist = artists.pop();
+                  if( artist ) {
+                    middleTubeSet.push(setTube(1, i, j, artist["name"], artist["avatar"], artist["description"]));
+                  }else {
+                    middleTubeSet.push(setTube(1, i, j, "手工客", "assets/tube/default.png", "等你来"));
+                  }
+                }
+              }
+            }
+          }
+      });
+
 
       /*
       // 3rd level
@@ -289,5 +314,8 @@ $(document).ready(function() {
           }
         }
       }*/
+
+      bottomTubeSet.toBack();
+      middleTubeSet.toFront();
 
   });

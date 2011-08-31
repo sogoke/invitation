@@ -22,7 +22,7 @@ body {
 }
 
 .popover div#feedback {
-  background: url(css/BG-feedback.gif) no-repeat center center;
+  background: url("css/BG-feedback.gif") no-repeat center center;
   z-index: 8;
 }
 
@@ -61,7 +61,7 @@ body {
 }
 
 #craftsman.topLeft {
-  background: url(css/BG-craftsman-top-left.gif) no-repeat 0 0;
+  background: url("css/BG-craftsman-top-left.gif") no-repeat 0 0;
 }
 
 #craftsman .topLeftMessage {
@@ -72,7 +72,7 @@ body {
 }
 
 .topRight {
-  background: url(css/BG-craftsman-top-right.gif) no-repeat 0 0;
+  background: url("css/BG-craftsman-top-right.gif") no-repeat 0 0;
 }
 
 #craftsman .topRightMessage {
@@ -83,7 +83,7 @@ body {
 }                  
 
 .bottomLeft {
-  background: url(css/BG-craftsman-bottom-left.gif) no-repeat 0 0;
+  background: url("css/BG-craftsman-bottom-left.gif") no-repeat 0 0;
 }
 
 #craftsman .bottomLeftMessage {
@@ -94,7 +94,7 @@ body {
 }                  
 
 .bottomRight {
-  background: url(css/BG-craftsman-bottom-right.gif) no-repeat 0 0;
+  background: url("css/BG-craftsman-bottom-right.gif") no-repeat 0 0;
 }
 
 #craftsman .bottomRightMessage {
@@ -119,7 +119,7 @@ body {
 }
 
 #contactContent div#join div#needs ul.position li {
-  list-style-image: url("css/bullet-turn.png");
+  list-style-image: url("css/bullet-turn.png") no-repeat 0 0;
 }
 
 #contactContent div#sidebar div#follow h3 {
