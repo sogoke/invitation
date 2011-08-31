@@ -42,14 +42,52 @@ Math.randInt = function(factor) {
 };
 
 function getOrder(level) {
-  var order = [], x, y, i, j,
-        bottomX = Math.floor(WIDTH / BOTTOM_TUBE_SIZE),
-        bottomY = Math.floor(VISUAL_HEIGHT / BOTTOM_TUBE_SIZE),
-        middleX = Math.floor(WIDTH / MIDDLE_TUBE_SIZE),
-        middleY = Math.floor(VISUAL_HEIGHT / MIDDLE_TUBE_SIZE),  // reduce the horizontal line
-        topX = Math.floor(WIDTH / BOTTOM_TUBE_SIZE),
-        topY = Math.floor(VISUAL_HEIGHT / TOP_TUBE_SIZE);              
+  var order = [], occupaied = [], factory = [], 
+      x, y, i, j, k, m, n, p, q, factor,
+      topX = Math.floor(WIDTH / BOTTOM_TUBE_SIZE),
+      topY = Math.floor(VISUAL_HEIGHT / TOP_TUBE_SIZE);              
 
+  if (level === 'bottom') {
+    x = Math.floor(WIDTH / BOTTOM_TUBE_SIZE);
+    y = Math.floor(VISUAL_HEIGHT / BOTTOM_TUBE_SIZE);
+    factor = Math.floor(x / 2);
+  } else if (level === 'middle') {
+    x = Math.floor(WIDTH / MIDDLE_TUBE_SIZE);
+    y = Math.floor(VISUAL_HEIGHT / MIDDLE_TUBE_SIZE);
+    factor = Math.floor(x / 2);
+  } else {
+  }
+
+  order.push([Math.floor(x / 2), Math.floor(y / 2)]);
+
+  for (i = 0; i <= factor; i++) {
+    factory[i] = [];
+    for (j = (-1 * i); j <= i; j++) {
+      for (k = i; k >= (-1 * i); k--) {
+        if (!(j === 0 && k === 0)) {
+          if ($.inArray(j + '' + k, occupaied) < 0) {
+            factory[i].push([j, k]);
+            occupaied.push(j + '' + k);
+            p = j + order[0][0];
+            q = k + order[0][1];
+            if ((p >= 0 && p <= x) && (q >= 0 && q <= y)) {
+              if (level === 'bottom') {
+                if  ($.inArray(p + '' + q, BOTTOM_BLACKLIST) < 0) {
+                  order.push([p, q]);
+                } else {
+                }
+              } else if (level === 'middle') {
+                if ($.inArray(p + '' + q, MIDDLE_BLACKLIST) < 0) {
+                  order.push([p, q]);
+                } else {
+                }
+              }
+            }                      
+          }
+        }
+      }
+    }
+  }
 
   return order;
 }
@@ -159,15 +197,14 @@ function setTube(level, x, y, name, avatar, message) {
         if ($.browser.mozlla)  {
           event.stopImmediatePropagation();
           event.stopPropagation();
-        }                            
+        }
+        outstanding = tube;
         craftsman = getCraftsman(tube, message, name);
         if (outstanding !== undefined) {outstanding.animate({'scale': 1}, DURATION, 'elastic').toBottom();}
         tube.toTop();
-
         if (paper.top === tube) {
           tube.attr({'cursor':'pointer'}).animate({scale: [2.5, 2.5]}, DURATION, 'elastic');
         }
-        outstanding = tube;
         timer = setTimeout(function(event) {
             $('#craftsman').attr('class', craftsman.cls).html(craftsman.html).css(craftsman.css).fadeIn(500);
             hasCraftman = true;
@@ -190,14 +227,14 @@ function setTube(level, x, y, name, avatar, message) {
         if ($.browser.mozlla)  {
           event.stopImmediatePropagation();
           event.stopPropagation();
-        }                            
+        }
+        outstanding = tube;
         craftsman = getCraftsman(tube, message, name);
         if (outstanding !== undefined) {outstanding.animate({'scale': 1}, DURATION, 'elastic').toBottom();}
         tube.toTop();
         if (paper.top === tube) {
           tube.attr({'cursor': 'pointer'}).animate({'scale': 2}, DURATION, 'elastic');
         }
-        outstanding = tube;
         timer = setTimeout(function() {
             $('#craftsman').attr('class', craftsman.cls).html(craftsman.html).css(craftsman.css).fadeIn(500);
             hasCraftman = true;
@@ -217,7 +254,7 @@ function setTube(level, x, y, name, avatar, message) {
     });
 
   } else if (level === 2) {
-    tube.mouseover(function() {
+    tube.mouseover(function(event) {
         craftsman = getCraftsman(this, message, name);
         tube.attr({'cursor':'pointer'}).animate({'scale': 1.5}, DURATION, 'elastic').toTop();
         if (!this.timer) {
@@ -227,7 +264,7 @@ function setTube(level, x, y, name, avatar, message) {
         }
     });
 
-    tube.mouseout(function() {
+    tube.mouseout(function(event) {
         if (this.timer) {clearTimeout(this.timer);}
         $('#craftsman').hide(); 
         tube.animate({'scale': 1}, DURATION, 'elastic');
@@ -243,15 +280,11 @@ function setTube(level, x, y, name, avatar, message) {
 ///////////////////////////////////////////////////////////////////////////
 // Initialize
 $(document).ready(function() {
-    var i, j, 
-        bottomTubeSet = paper.set(), 
-        middleTubeSet = paper.set(),
-        bottomX = Math.floor(WIDTH / BOTTOM_TUBE_SIZE),
-        bottomY = Math.floor(VISUAL_HEIGHT / BOTTOM_TUBE_SIZE),
-        middleX = Math.floor(WIDTH / MIDDLE_TUBE_SIZE),
-    middleY = Math.floor(VISUAL_HEIGHT / MIDDLE_TUBE_SIZE),  // reduce the horizontal line
-      topX = Math.floor(WIDTH / BOTTOM_TUBE_SIZE),
-      topY = Math.floor(VISUAL_HEIGHT / TOP_TUBE_SIZE);
+    var i, j, x, y,
+        bottomOrder = getOrder('bottom'),
+        middleOrder = getOrder('middle'),
+        bottomTubeSet = paper.set(),
+        middleTubeSet = paper.set();
 
       //////////////////////////////////////////////////////////////////
       // Adjust speed of honeycomb animation
@@ -268,54 +301,39 @@ $(document).ready(function() {
 
       /////////////////////////////////////////////////////////////////////
       // Draw the honeycomb
-      ////////////////////////////////////////////////////////////////////
+      /////////////////////////////////////////////////////////////////////
       $.ajax({
           url: "/artists/visible",
           dataType: 'json',
           success: function( artists ){
 
-            // 1st level
-            for (i = 0; i < bottomX; i++) {
-              for (j = 0; j < bottomY; j++) {
-                if($.inArray(i + '' + j, BOTTOM_BLACKLIST) < 0) {
-                  artist = artists.pop();
-                  if( artist ) {
-                    bottomTubeSet.push(setTube(0, i, j, artist["name"], artist["avatar"], artist["description"]));
-                  } else {
-                    bottomTubeSet.push(setTube(0, i, j, "手工客", "assets/tube/default/" + Math.randInt(DEFAULT_TUBE_NUMBER) + ".png", "等你来"));
-                  }
-                }
+            // bottom level
+            for (i = 0; i < bottomOrder.length; i++) {
+              x = bottomOrder[i][0];
+              y = bottomOrder[i][1];
+              artist = artists.pop();
+              if( artist ) {
+                bottomTubeSet.push(setTube(0, x, y, artist["name"], artist["avatar"], artist["description"]));
+              } else {
+                bottomTubeSet.push(setTube(0, x, y, "手工客", "assets/tube/default/" + Math.randInt(DEFAULT_TUBE_NUMBER) + ".png", "等你来"));
               }
             }
 
-            // 2nd level
-            for (i = 0; i < middleX; i++) {
-              for (j = 0; j < middleY; j++) {
-                if ($.inArray(i + '' + j, MIDDLE_BLACKLIST) < 0) {
-                  artist = artists.pop();
-                  if( artist ) {
-                    middleTubeSet.push(setTube(1, i, j, artist["name"], artist["avatar"], artist["description"]));
-                  }else {
-                    middleTubeSet.push(setTube(1, i, j, "手工客", "assets/tube/default.png", "等你来"));
-                  }
-                }
+            // middle level
+            for (j = 0; j < middleOrder.length; j++) {
+              x = middleOrder[j][0];
+              y = middleOrder[j][1];
+              artist = artists.pop();
+              if( artist ) {
+                middleTubeSet.push(setTube(1, x, y, artist["name"], artist["avatar"], artist["description"]));
+              }else {
+                middleTubeSet.push(setTube(1, x, y, "手工客", "assets/tube/default/" + Math.randInt(DEFAULT_TUBE_NUMBER) + ".png", "等你来"));
               }
             }
           }
       });
 
-
-      /*
-      // 3rd level
-      for (i = 0; i < topX; i++) {
-        for (j = 0; j < topY; j++) {
-          if ($.inArray(i + '' + j, TOP_BLACKLIST) < 0) {
-            setTube(2, i, j);
-          }
-        }
-      }*/
-
+      // order tubes in the right way
       bottomTubeSet.toBack();
       middleTubeSet.toFront();
-
   });
