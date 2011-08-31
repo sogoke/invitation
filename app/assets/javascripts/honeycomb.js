@@ -311,7 +311,7 @@ $(document).ready(function() {
           for (j = 0; j < bottomOrder.length; j++) {
             x = bottomOrder[j][0];
             y = bottomOrder[j][1];
-            artist = artists[88+j];
+            artist = artists[50+j];
             if( artist ) {
               bottomTubeSet.push(setTube(0, x, y, artist["name"], artist["avatar"], artist["description"]));
             }else {
