@@ -59,14 +59,14 @@ body {
                          
 
 .popover div#request div.detail form.request fieldset input.button {
-  left: 3.6em;
+  left: 3.3em;
 }
 
 .popover div#feedback img.feedbackClose {
   top: 30px;
 }
 
-#craftsman.topLeft {
+.topLeft {
   background: url("css/BG-craftsman-top-left.gif") no-repeat 0 0; 
 }
 
