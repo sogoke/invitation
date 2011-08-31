@@ -101,19 +101,19 @@ function getCraftsman(tube, message, name) {
 
   if (x < cx && y < cy) {
     craftsman.cls = 'topLeft';
-    craftsman.css = {'top': y + 180, 'left': x + 15};
+    craftsman.css = {'top': y + 150, 'left': x + 15};
     craftsman.html = '<strong class="topLeftName">' + name + '</strong><p class="topLeftMessage">' + message + '</p>';
   } else if (x >= cx && y < cy) {
     craftsman.cls = 'topRight';
-    craftsman.css = {'top': y + 180, 'left': x - 309};
+    craftsman.css = {'top': y + 150, 'left': x - 310};
     craftsman.html = '<strong class="topRightName">' + name + '</strong><p class="topRightMessage">' + message + '</p>'; 
   } else if (x >= cx && y >= cy) {
     craftsman.cls = 'bottomRight';
-    craftsman.css = {'top': y - 0, 'left': x - 300};
+    craftsman.css = {'top': y - 90, 'left': x - 310};
     craftsman.html = '<strong class="bottomRightName">' + name + '</strong><p class="bottomRightMessage">' + message + '</p>'; 
   } else if (x < cx && y >= cy) {
     craftsman.cls = 'bottomLeft';
-    craftsman.css = {'top': y - 0, 'left': x + 25};
+    craftsman.css = {'top': y - 90, 'left': x + 25};
     craftsman.html = '<strong class="bottomLeftName">' + name + '</strong><p class="bottomLeftMessage">' + message + '</p>'; 
   }
 
@@ -327,7 +327,7 @@ $(document).ready(function() {
             if( artist ) {
               middleTubeSet.push(setTube(1, x, y, artist["name"], artist["avatar"], artist["description"]));
             } else {
-              middleTubeSet.push(setTube(1, x, y, "手工客", "assets/tube/default.png", "等你来"));
+              middleTubeSet.push(setTube(1, x, y, "手工客", "assets/tube/default/" + Math.randInt(DEFAULT_TUBE_NUMBER) + ".png", "等你来"));
             }
           }
 
