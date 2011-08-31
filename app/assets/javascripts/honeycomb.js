@@ -334,6 +334,6 @@ $(document).ready(function() {
       });
 
       // order tubes in the right way
-      bottomTubeSet.toBack();
-      middleTubeSet.toFront();
+      bottomTubeSet.toFront();
+      middleTubeSet.toBack();
   });
