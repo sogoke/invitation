@@ -1,4 +1,4 @@
-///////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////
 // Global Constants
 ///////////////////////////////////////////////////////////////////////////
 var WIDTH = 1000, HEIGHT = 400;
@@ -8,11 +8,7 @@ var DURATION = 2400, WAITING = 600;
 
 var DEFAULT_TUBE_NUMBER = 7;
 
-
 var BOTTOM_OFFSET = 10;
-var MIDDLE_OFFSET = 20;
-var TOP_OFFSET = 50;
-
 var BOTTOM_TUBE_SIZE = 48;
 var BOTTOM_BLACKLIST = ['00','10','20','30','40','50','130','140','150','160','170','180','190','200','210','220','230','240','250','260',
   '01','11','21','14','181', '171','191','201','211','241','251','261',
@@ -22,6 +18,7 @@ var BOTTOM_BLACKLIST = ['00','10','20','30','40','50','130','140','150','160','1
   '05','15','25','35','45','45','55','145','155','165','175', '185', '195','205','215','225','235','245','255','265',
   '06','16','26','36','46','56','56','66','76','86','96', '106', '116','126','136','146','156','166','176','186','196','206','216','226','236','246','256','266'];
 
+var MIDDLE_OFFSET = 20;
 var MIDDLE_TUBE_SIZE = 60 + 12;
 var MIDDLE_BLACKLIST = ['00','10','20','30','110','120','130','140','150','160','170',
   '01','11','121','131',
@@ -29,6 +26,7 @@ var MIDDLE_BLACKLIST = ['00','10','20','30','110','120','130','140','150','160',
   '03','13','133','173',
   '04', '14','24','34','44','94','104','114', '124'];
 
+var TOP_OFFSET = 50;
 var TOP_TUBE_SIZE = 80;
 var TOP_BLACKLIST = ['00','10','20','70','80','90','100','110','120',
   '01','11','81','91','101','111', '121',
@@ -51,22 +49,34 @@ Math.randInt = function(factor) {
 
 function getOrder(level) {
   var order = [], occupaied = [], factory = [], 
-      x, y, i, j, k, m, n, p, q, factor,
+      x, y, i, j, k, m, n, p, q, 
+      factor, factorX, factorY,
       topX = Math.floor(WIDTH / BOTTOM_TUBE_SIZE),
       topY = Math.floor(VISUAL_HEIGHT / TOP_TUBE_SIZE);              
 
   if (level === 'bottom') {
     x = Math.floor(WIDTH / BOTTOM_TUBE_SIZE);
     y = Math.floor(VISUAL_HEIGHT / BOTTOM_TUBE_SIZE);
-    factor = Math.floor(x / 2);
   } else if (level === 'middle') {
     x = Math.floor(WIDTH / MIDDLE_TUBE_SIZE);
     y = Math.floor(VISUAL_HEIGHT / MIDDLE_TUBE_SIZE);
-    factor = Math.floor(x / 2);
   } else {
   }
 
-  order.push([Math.floor(x / 2), Math.floor(y / 2)]);
+
+  if (x % 2) {
+    factorX = Math.floor(x / 2) + 1;
+  } else {
+    factorX = Math.floor(x / 2);
+  }
+  if (y % 2) {
+    factorY = Math.floor(y / 2) + 1;
+  } else {
+    factorY = Math.floor(y / 2);
+  }
+
+  order.push([factorX, factorY]);
+  factor = factorX >= factorY ? factorX : factorY;
 
   for (i = 0; i <= factor; i++) {
     factory[i] = [];
@@ -121,7 +131,7 @@ function getCraftsman(tube, message, name) {
     craftsman.html = '<strong class="bottomRightName">' + name + '</strong><p class="bottomRightMessage">' + message + '</p>'; 
   } else if (x < cx && y >= cy) {
     craftsman.cls = 'bottomLeft';
-    craftsman.css = {'top': y - 90, 'left': x + 25};
+    craftsman.css = {'top': y - 90, 'left': x + 15};
     craftsman.html = '<strong class="bottomLeftName">' + name + '</strong><p class="bottomLeftMessage">' + message + '</p>'; 
   }
 
@@ -202,29 +212,45 @@ function setTube(level, x, y, name, avatar, message) {
         if ($.browser.mozlla)  {
           event.stopImmediatePropagation();
           event.stopPropagation();
+        } else if ($.browser.msie) {
+          event.stopPropagation();       
         }
-        outstanding = tube;
-        craftsman = getCraftsman(tube, message, name);
+
         if (outstanding !== undefined) {outstanding.animate({'scale': 1}, DURATION, 'elastic').toBottom();}
-        tube.toTop();
+        outstanding = tube;
+
+        if ($.browser.msie) {
+          tube.toFront();
+        } else {
+          tube.toTop();
+        }
+
         if (paper.top === tube) {
           tube.attr({'cursor':'pointer'}).animate({scale: [2.5, 2.5]}, DURATION, 'elastic');
+          craftsman = getCraftsman(tube, message, name);
+          timer = setTimeout(function(event) {
+              $('#craftsman').attr('class', craftsman.cls).html(craftsman.html).css(craftsman.css).fadeIn(500);
+              hasCraftman = true;
+            }, WAITING);
         }
-        timer = setTimeout(function(event) {
-            $('#craftsman').attr('class', craftsman.cls).html(craftsman.html).css(craftsman.css).fadeIn(500);
-            hasCraftman = true;
-          }, WAITING);
+
     });
 
     tube.mouseout(function(event) {
         if ($.browser.mozlla)  {
           event.stopImmediatePropagation();
           event.stopPropagation();
+        } else if ($.browser.msie) {
+          event.stopPropagation();       
         }
+
+        if (timer) {clearTimeout(timer);}    
         if (hasCraftman) {$('#craftsman').hide(); hasCraftman = false;}
-        if (timer) {clearTimeout(timer);}
-        if (outstanding !== undefined) {outstanding.animate({'scale': 1}, DURATION, 'elastic').toBottom();} 
-        tube.animate({'scale': 1}, DURATION, 'elastic').toBottom();
+        if (outstanding !== undefined) {outstanding.animate({'scale': 1}, DURATION, 'elastic').toBottom();}
+
+        if (paper.top === tube) {
+          tube.animate({'scale': 1}, DURATION, 'elastic').toBottom();
+        }
     });
 
   } else if (level === 1) {
@@ -232,29 +258,42 @@ function setTube(level, x, y, name, avatar, message) {
         if ($.browser.mozlla)  {
           event.stopImmediatePropagation();
           event.stopPropagation();
+        } else if ($.browser.msie) {
+          event.stopPropagation();
         }
-        outstanding = tube;
-        craftsman = getCraftsman(tube, message, name);
         if (outstanding !== undefined) {outstanding.animate({'scale': 1}, DURATION, 'elastic').toBottom();}
-        tube.toTop();
+        outstanding = tube;
+
+        if ($.browser.msie) {
+          tube.toFront();
+        } else {
+          tube.toTop();
+        }
+
         if (paper.top === tube) {
           tube.attr({'cursor': 'pointer'}).animate({'scale': 2}, DURATION, 'elastic');
+          craftsman = getCraftsman(tube, message, name);
+          timer = setTimeout(function() {
+              $('#craftsman').attr('class', craftsman.cls).html(craftsman.html).css(craftsman.css).fadeIn(500);
+              hasCraftman = true;
+            }, WAITING);
         }
-        timer = setTimeout(function() {
-            $('#craftsman').attr('class', craftsman.cls).html(craftsman.html).css(craftsman.css).fadeIn(500);
-            hasCraftman = true;
-          }, WAITING);
+
     });
 
     tube.mouseout(function(event) {
         if ($.browser.mozlla)  {
           event.stopImmediatePropagation();
           event.stopPropagation();
-        }                     
+        }
+
+        if (timer) {clearTimeout(timer);
         if (hasCraftman) {$('#craftsman').hide(); hasCraftman = false;}
         if (outstanding !== undefined) {outstanding.animate({'scale': 1}, DURATION, 'elastic').toBottom();}
-        if (timer) {clearTimeout(timer);
+
+        if (paper.top === tube) {
           tube.animate({'scale': 1}, DURATION, 'elastic').toBottom();
+        }
         }
     });
 
@@ -287,9 +326,7 @@ function setTube(level, x, y, name, avatar, message) {
 $(document).ready(function() {
     var i, j, x, y,
         bottomOrder = getOrder('bottom'),
-        middleOrder = getOrder('middle'),
-        bottomTubeSet = paper.set(),
-        middleTubeSet = paper.set();
+        middleOrder = getOrder('middle');
 
     //////////////////////////////////////////////////////////////////
     // Adjust speed of honeycomb animation
@@ -297,8 +334,10 @@ $(document).ready(function() {
     if ($.browser.msie && $.browser.version === 6.0) {
     } else if ($.browser.msie && $.browser.version === 7.0) {
     } else if ($.browser.msie && $.browser.version === 8.0) {
-    } else if ($.browser.mozilla) {
-      DURATION = 600;
+    } else if ($.browser.msie && $.browser.version === 9.0) {
+      }else if ($.browser.mozilla) {
+      DURATION = 1600;
+      WAITING = 800;
     } else if ($.browser.opera) {
       DURATION = 3000;
       WAITING = 2000;
@@ -318,9 +357,9 @@ $(document).ready(function() {
             y = bottomOrder[j][1];
             artist = artists[50+j];
             if( artist ) {
-              bottomTubeSet.push(setTube(0, x, y, artist["name"], artist["avatar"], artist["description"]));
+              setTube(0, x, y, artist["name"], artist["avatar"], artist["description"]);
             }else {
-              bottomTubeSet.push(setTube(0, x, y, "手工客", "assets/tube/default/" + Math.randInt(DEFAULT_TUBE_NUMBER) + ".png", "等你来"));
+              setTube(0, x, y, "手工客", "assets/tube/default/" + Math.randInt(DEFAULT_TUBE_NUMBER) + ".png", "等你来");
             }
           }
 
@@ -330,9 +369,9 @@ $(document).ready(function() {
             y = middleOrder[i][1];
             artist = artists[i];
             if( artist ) {
-              middleTubeSet.push(setTube(1, x, y, artist["name"], artist["avatar"], artist["description"]));
+              setTube(1, x, y, artist["name"], artist["avatar"], artist["description"]);
             } else {
-              middleTubeSet.push(setTube(1, x, y, "手工客", "assets/tube/default/" + Math.randInt(DEFAULT_TUBE_NUMBER) + ".png", "等你来"));
+              setTube(1, x, y, "手工客", "assets/tube/default/" + Math.randInt(DEFAULT_TUBE_NUMBER) + ".png", "等你来");
             }
           }
 
