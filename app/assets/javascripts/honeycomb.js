@@ -7,19 +7,27 @@ var VISUAL_WIDTH = 1000, VISUAL_HEIGHT = 300;
 var DURATION = 2400, WAITING = 600;
 
 var DEFAULT_TUBE_NUMBER = 7;
+
+
+var BOTTOM_OFFSET = 10;
+var MIDDLE_OFFSET = 20;
+var TOP_OFFSET = 50;
+
 var BOTTOM_TUBE_SIZE = 48;
-var BOTTOM_BLACKLIST = ['00','10','20','30','40','50','60','120','130','140','150','160','170','180','190','200','210','220','230','240','250','260',
-  '01','131','141','191','201','211','241','251','261',
-  '262','202','212','222','232','242','252','262',
+var BOTTOM_BLACKLIST = ['00','10','20','30','40','50','130','140','150','160','170','180','190','200','210','220','230','240','250','260',
+  '01','11','21','14','181', '171','191','201','211','241','251','261',
+  '02', '262','202','212', '192', '222','232','242','252','262',
   '203',
-  '04','44','204',
-  '05','15','25','35','45','45','55','115','125','135','145','155','165','195','205','215','225','235','245','255','265',
-  '06','16','26','36','46','56','56','66','76','86','116','126','136','146','156','166','176','186','196','206','216','226','236','246','256','266'];
+  '04', '194','204',
+  '05','15','25','35','45','45','55','145','155','165','175', '185', '195','205','215','225','235','245','255','265',
+  '06','16','26','36','46','56','56','66','76','86','96', '106', '116','126','136','146','156','166','176','186','196','206','216','226','236','246','256','266'];
 
 var MIDDLE_TUBE_SIZE = 60 + 12;
-var MIDDLE_BLACKLIST = ['00','10','20','30','40','80','90','100','110','120','130','140','150','160','170',
-  '01','121','131',
-  '03','13','123','132','133','173'];
+var MIDDLE_BLACKLIST = ['00','10','20','30','110','120','130','140','150','160','170',
+  '01','11','121','131',
+  '02','12',
+  '03','13','133','173',
+  '04', '14','24','34','44','94','104','114', '124'];
 
 var TOP_TUBE_SIZE = 80;
 var TOP_BLACKLIST = ['00','10','20','70','80','90','100','110','120',
@@ -123,25 +131,22 @@ function getCraftsman(tube, message, name) {
 function setTube(level, x, y, name, avatar, message) {
   var tube;
   var craftsman;
-  var offset_level0 = 15;
-  var offset_level1 = 24;
-  var offset_level2 = 50;
   var width, height, left, top;
 
   if (level === 0) {
     width = height = 48;
-    left = (48 * x) + Math.randInt(offset_level0);
-    top = (48 * y) + Math.randInt(offset_level0) + 35;
+    left = (48 * x) + Math.randInt(BOTTOM_OFFSET);
+    top = (48 * y) + Math.randInt(BOTTOM_OFFSET) + 35;
     tube = paper.image(avatar, left, top, width, height);
   } else if (level == 1) {
     width = height = 60;
-    left = (60 * x) + Math.randInt(offset_level1);
-    top = (60 * y) + Math.randInt(offset_level1) + 35;
+    left = (60 * x) + Math.randInt(MIDDLE_OFFSET);
+    top = (60 * y) + Math.randInt(MIDDLE_OFFSET) + 35;
     tube = paper.image(avatar, left, top, width, height);
   } else if (level == 2) {
     width = height = 80;
-    left = (80 * x) + Math.randInt(offset_level2);
-    top = (80 * y) + Math.randInt(offset_level2) + 35;
+    left = (80 * x) + Math.randInt(TOP_OFFSET);
+    top = (80 * y) + Math.randInt(TOP_OFFSET) + 35;
     tube = paper.image(avatar, left, top, width, height);
   } else {
   }

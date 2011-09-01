@@ -10,6 +10,8 @@
 
 
 
+
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -403,7 +405,7 @@ input#applyButton {
   position: absolute;
   top: 145px;
   right: 30px;
-  font-family: "Microsoft YaHei";
+  font-family: "Microsoft YaHei", "SimHei";
   font-size:35px;
   color: #d45500;
   width: auto;
@@ -427,7 +429,7 @@ input#applyButton {
   position: absolute;
   top: 145px;
   right:80px;
-  font-family: "Microsoft YaHei";
+  font-family: "Microsoft YaHei", "SimHei";
   font-size:30px;
   color: #d45500;
   width: auto;
@@ -451,7 +453,7 @@ input#applyButton {
   position: absolute;
   top: 145px;
   right: 30px;
-  font-family: "Microsoft YaHei";
+  font-family: "Microsoft YaHei", "SimHei";
   font-size:30px;
   color: #d45500;
   width: auto;
@@ -475,7 +477,7 @@ input#applyButton {
   position: absolute;
   top: 145px;
   right: 80px;
-  font-family: "Microsoft YaHei";
+  font-family: "Microsoft YaHei", "SimHei";
   font-size:30px;
   color: #d45500;
   width: auto;
@@ -720,7 +722,7 @@ input#applyButton {
   padding-bottom: 8px;
   font-size: 25px;
   width: 970px;
-  font-family: "Microsoft YaHei";
+  font-family: "Microsoft YaHei", "SimHei";
   border-bottom: 1px solid #eeeeee;
 }
 
@@ -734,7 +736,7 @@ input#applyButton {
 
 #aboutContent div#about p.title {
   font-size: 20px;
-  font-family: "Microsoft YaHei";
+  font-family: "Microsoft YaHei", "SimHei";
 }
 
 #aboutContent div#about p.email {
@@ -764,7 +766,7 @@ input#applyButton {
 
 #join h3#joinUS {
   width: 700px;
-  font-family:"Microsoft YaHei";
+  font-family:"Microsoft YaHei", "SimHei";
   padding-bottom: 8px;
   font-size: 25px;
   border-bottom: 1px solid #eeeeee;
@@ -772,7 +774,7 @@ input#applyButton {
 
 #join div#why {
   width: 700px;
-  font-family:"Microsoft YaHei";
+  font-family: "Microsoft YaHei", "SimHei";
   margin: 15px 0 0 0;
   padding-bottom: 8px;
   border-bottom: 1px solid #eeeeee;
@@ -793,7 +795,7 @@ input#applyButton {
 }                          
 
 #join div#needs ul.position li:hover {
-  list-style-image: url("css/bullet-turn.png") no-repeat 0 0;
+  list-style-image: url(css/bullet-turn.png);
 }
 
 #join div#needs ul.position li a.scroll {
@@ -805,11 +807,11 @@ input#applyButton {
 
 #join div#needs p.title {
   font-size: 20px;
-  font-family: "Microsoft YaHei", "sans-serif";
+  font-family: "Microsoft YaHei", "SimHei";
 }
 
 #join div#needs li {
-  list-style-image: url("css/bullet.png") no-repeat 0 0;
+  list-style-image: url(css/bullet.png);
 }
 
 #join div.job {
@@ -821,20 +823,20 @@ input#applyButton {
 }
 
 #join div.job li {
-  list-style-image: url("css/bullet.png") no-repeat 0 0;
+  list-style-image: url("css/bullet.png") !important;
   margin-left: 10px;
 }
 
 #join div.job p.position {
   color: #e2a70a;
-  font-family:"Microsoft YaHei";
+  font-family:"Microsoft YaHei", "SimHei";
   font-size: 20px;
   font-weight: bold;
   margin: 25px 0 20px 0;
 }
 
 #join div.job p.priority {
-  font-family:"Microsoft YaHei";
+  font-family:"Microsoft YaHei", "SimHei";
   font-size:14px;
   font-weight: bold;
   margin: 15px 0 10px 0;
