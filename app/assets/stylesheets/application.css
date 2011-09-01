@@ -8,6 +8,19 @@
    License: none (public domain)
 */
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -76,6 +89,8 @@ a {
 }
 
 a:visited {
+  border: none;
+  text-decoration: none;
 }
 
 /********************************************************************
@@ -129,6 +144,8 @@ a:visited {
   width: auto;
   height: 40px;
   position: relative;
+  top: 0;
+  left: 0;
   background-color: #EBEBEB;
   color: #999;
   font-size: 12px;
@@ -153,6 +170,7 @@ a:visited {
 
 #footer small#links a {
   color: #aaaaaa;
+  text-decoration: underline;
 }
 /**********************************************************
  * End of Footer
@@ -176,7 +194,7 @@ a:visited {
 #indexContent {
   position: relative;
   width: auto;
-  height: 237px;
+  height: 233px;
   top: 30px;
 }
 
@@ -227,6 +245,7 @@ td.value p.explain {
   font-size: 13px;
   margin-top: 8px;
   line-height: 1.5em;
+  font-family: "Microsoft YaHei", "SimSun";
 }
 
 td#discover {
@@ -256,7 +275,7 @@ td#grow p.explain {
   width: 304px;
   height: 230px;
   position: absolute;
-  top: -25px;
+  top: -29px;
   left: 695px;
   right: 0;
   background-color: #F2ECE9;
@@ -274,6 +293,7 @@ td#grow p.explain {
   font-size: 20px;
   font-weight: bold;
   color: #333333;
+  font-family: "Microsoft YaHei", "SimHei";
 }
 
 #apply p.detail {
@@ -287,6 +307,7 @@ td#grow p.explain {
   font-size: 1.2em;
   color: #4d4d4d;
   line-height: 1.5em;
+  font-family: "Microsoft YaHei", "SimSun";
 }             
 
 input.button{
@@ -298,6 +319,7 @@ input.button{
   font-weight: bold;
   border: none;
   cursor: pointer;
+  font-family: "Microsoft YaHei", "SimSun";
 }
 
 input#applyButton {
@@ -392,6 +414,7 @@ input#applyButton {
   height: 200px;
   display: none;
   z-index: 3;
+  font-family: "Microsoft YaHei", "SimSun";
 }
 
 #craftsman.topLeft {
@@ -541,6 +564,7 @@ input#applyButton {
   top: 25px;
   left: 0;
   font-size: 30px;
+  font-family: "Microsoft YaHei", "SimSun";
   margin: 0;
   color: #000000;
 }
@@ -767,11 +791,12 @@ input#applyButton {
   padding-bottom: 8px;
   font-size: 25px;
   border-bottom: 1px solid #eeeeee;
+  display: block;
 }
 
 #join div#why {
   width: 700px;
-  font-family: "Microsoft YaHei", "SimHei";
+  font-family: "Microsoft YaHei", "SimSun";
   margin: 15px 0 0 0;
   padding-bottom: 8px;
   border-bottom: 1px solid #eeeeee;
@@ -783,7 +808,7 @@ input#applyButton {
     top: 0;
     left: 0;
     margin: 30px 0 0 0;
-    display: block;
+    line-height: 16px;
 }
 
 #join div#needs ul.position li {
@@ -814,9 +839,10 @@ input#applyButton {
 #join div.job {
   width: 620px;
   height: auto;
-  margin: 0 0 35px 0;
+  margin: 0;
   padding: 0 0 35px 0;
   border-bottom: 1px solid #eeeeee;
+  font-family: "Microsoft YaHei", "SimSun";
 }
 
 #join div.job li {
@@ -868,10 +894,12 @@ input#applyButton {
 
 #sidebar div#follow h3 {
   width: 250px;
-  padding:  0 0 8px 0;
+  padding-bottom:8px;
   color: #333333;
   font-size: 18px;
   border-bottom: 1px solid #f2f2f2;
+  display: block;
+  font-family: "Microsoft YaHei", "SimSun";
 }
 
 #sidebar div#sns {
@@ -916,6 +944,7 @@ input#applyButton {
   left: 10px;
   font-size: 24px;
   color: #666666;
+  font-family: "Microsoft YaHei", "SimHei";
 }
 
 #sidebar div#recommend img.cover {
@@ -929,6 +958,7 @@ input#applyButton {
   font-size: 12px;
   color: #838383;
   height: 0px;
+  font-family: "Microsoft YaHei", "SimSun";
 }
 
 #sidebar div#recommend div.description p {

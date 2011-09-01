@@ -7,7 +7,8 @@ body {
 }
 
 #footer small {
-  padding: 8px 0 0 0;
+  height: 1em;
+  padding: 3px 0 5px 0;
 }
 
 /*=============================================================================
@@ -19,6 +20,10 @@ body {
   -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#B2000000,endColorstr=#B2000000)"; /* IE8 */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#B2000000,endColorstr=#B2000000);   /* IE6 & 7 */
   zoom: 1;
+}
+
+#introduction {
+  top: 29px;
 }
 
 .popover div#feedback {
@@ -107,13 +112,18 @@ body {
 /*=============================================================================
  * contact page
  *===========================================================================*/
+ #join div.job {
+  margin: 0;
+  padding: 0;
+}
+
 #contactContent div#join div.jobs a.back2top {
   margin-top: 100px;
 }
 
 #contactContent div#join div.job a.back2top {
   position: relative;
-  top: 35px;
+  top: 0;
   right: 0;
   padding: 3px 0 0 0;
 }
@@ -126,6 +136,18 @@ body {
   padding: 5px 0 0 0;
 }
 
+#sidebar {
+  top: 0;
+}
+
+#sidebar div#follow h3 {
+  height: 26px;
+  padding: 0 0 8px 0;
+}
+
+#sidebar div#recommend div.description p {
+  line-height: 1.2em;
+}                          
 /*=============================================================================
  * About page
  *===========================================================================*/

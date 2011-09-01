@@ -19,9 +19,8 @@ body {
   width: 270px;
 }
 
-td#grow p.explain {
-  position: relative;
-  top: 3px;
+#introduction {
+  top: 29px;
 }
 
 .popover {
@@ -53,8 +52,8 @@ td#grow p.explain {
 }
 
 .popover div#request div.detail form.request fieldset input.nickname {
-   height: 1em;
-   padding: 13px 0;
+  height: 1em;
+  padding: 13px 0;
 }
 
 .popover div#request div.detail form.request fieldset input.email{
@@ -66,16 +65,16 @@ td#grow p.explain {
   left: .8em;
 }
 
- .popover div#request div.detail form.request fieldset strong {
-   position: relative;
-   top: -15px;
-   left: 10px;
+.popover div#request div.detail form.request fieldset strong {
+  position: relative;
+  top: -15px;
+  left: 10px;
 }
 
-  .popover div#request div.detail form.request fieldset strong.avatarError {
-   position: relative;
-   top: -5px;
-   left: 10px;
+.popover div#request div.detail form.request fieldset strong.avatarError {
+  position: relative;
+  top: -5px;
+  left: 10px;
 }            
 
 .popover div#feedback p.thanks {
@@ -129,13 +128,18 @@ td#grow p.explain {
 /*=============================================================================
  * contact page
  *===========================================================================*/
+#join div.job {
+  margin: 0;
+  padding: 0;
+}         
+
 #contactContent div#join div.jobs a.back2top {
   margin-top: 100px;
 }
 
 #contactContent div#join div.job a.back2top {
   position: relative;
-  top: 35px;
+  top: 0;
   right: 0;
   padding: 3px 0 0 0;
 }
@@ -146,6 +150,15 @@ td#grow p.explain {
 
 #contactContent div#sidebar div#follow h3 {
   padding: 5px 0 0 0;
+}
+
+#sidebar {
+top: 0;
+}
+
+#sidebar div#follow h3 {
+  height: 26px;
+  padding:  0 0 8px 0;
 }
 
 #sidebar div#recommend div.description p {

@@ -42,15 +42,31 @@
           <div id="needs">
             <p class="title">手工客需要：</p>
             <ul class="position">
-              <li><a class="scroll" href="javascript:void(0);" onclick="(function () {window.scrollTo(0,320);})();">Ruby开发工程师</a></li>
-              <li><a class="scroll" href="javascript:void(0);" onclick="(function () {window.scrollTo(0,570);})();">产品经理</a></li>
-              <li><a class="scroll" href="javascript:void(0);" onclick="(function () {window.scrollTo(0,845);})();">交互设计师</a></li>
-              <li><a class="scroll" href="javascript:void(0);" onclick="(function () {window.scrollTo(0,1105);})();">互动营销师</a></li>
-              <li><a class="scroll" href="javascript:void(0);" onclick="(function () {window.scrollTo(0,1355);})();">BD拓展专员</a></li>
+            <script  type="text/javascript" charset="UTF-8">
+              function findDistance(id) {
+                var element = document.getElementById(id+''),
+                    distance = -25;
+
+                  if (!element || !element.offsetParent) {
+                    return null;
+                  } else {
+                  do {
+                    distance += element.offsetTop;
+                  } while (element = element.offsetParent);
+                }
+
+                return distance;
+              }
+              </script>
+              <li><a class="scroll" href="javascript:void(0);" onclick="(function () {window.scrollTo(0,findDistance('REB2T') || 500);})();">Ruby开发工程师</a></li>
+              <li><a class="scroll" href="javascript:void(0);" onclick="(function () {window.scrollTo(0,findDistance('PMB2T') || 570);})();">产品经理</a></li>
+              <li><a class="scroll" href="javascript:void(0);" onclick="(function () {window.scrollTo(0,findDistance('UIB2T') || 845);})();">交互设计师</a></li>
+              <li><a class="scroll" href="javascript:void(0);" onclick="(function () {window.scrollTo(0,findDistance('ISB2T') || 1105);})();">互动营销师</a></li>
+              <li><a class="scroll" href="javascript:void(0);" onclick="(function () {window.scrollTo(0,findDistance('BDB2T') || 1355);})();">BD拓展专员</a></li>
             </ul>
           </div><!-- needs -->
           <div class="job">
-            <p class="position">Ruby开发工程师</p>
+            <p class="position" id="REB2T">Ruby开发工程师</p>
             <ul>
               <li>在乎代码，而且写的还不错</li>
               <li>是一个多面手，Ruby和Javascript对你来说不在话下，再多一些C/C++/Erlang就更好</li>
@@ -69,7 +85,7 @@
             <a class="back2top" href="javascript:void(0);" onclick="(function () {window.scrollTo(0,0);})();">回到顶部</a>
           </div>
           <div class="job">
-            <p class="position">产品经理</p>
+            <p class="position" id="PMB2T">产品经理</p>
             <ul>
               <li>熟悉产品经理的那些玩具和玩儿法</li>
               <li>对数据敏感，并能从平凡无趣的数据中发现问题和需求</li>
@@ -85,7 +101,7 @@
             <a class="back2top" href="javascript:void(0);" onclick="(function () {window.scrollTo(0,0);})();">回到顶部</a>
           </div>
           <div class="job">
-            <p class="position">UI交互设计师</p>
+            <p class="position" id="UIB2T">UI交互设计师</p>
             <ul>
               <li>有创意、有想法，喜欢挑战</li>
               <li>是一个多面手，不但能做好的UI交互设计，也能自己切图实现设计想法，如果对html5，JS有研究会更好</li>
@@ -102,7 +118,7 @@
             <a class="back2top" href="javascript:void(0);" onclick="(function () {window.scrollTo(0,0);})();">回到顶部</a>
           </div>
           <div class="job">
-            <p class="position">互动营销师</p>
+            <p class="position" id="ISB2T">互动营销师</p>
             <ul>
               <li>喜欢分享和与人打交道，并乐在其中</li>
               <li>熟悉SNS社交媒体的传播（SMO）路径和玩法</li>
@@ -119,7 +135,7 @@
             <a class="back2top" href="javascript:void(0);" onclick="(function () {window.scrollTo(0,0);})();">回到顶部</a>
           </div>
           <div class="job">
-            <p class="position">BD拓展专员</p>
+            <p class="position" id="BDB2T">BD拓展专员</p>
             <ul>
               <li>与手工创意人、线下手工店铺、淘宝手工卖家等就合作进行联络、沟通和拓展</li>
             </ul>
@@ -162,7 +178,7 @@
           <img class="label" src="assets/recommend.png" alt="special recommend" />
         </div><!-- sidebar -->
       </div><!-- content -->
-      <div id="footer">
+      <div id="footer" style="margin-top:70px">
         <small id="copyright">Copyright@sokoge.com 2011, All Right Reserved</small>
         <small id="links"><a href="about.html">关于手工客<a/>  <a href="contact.html">加入我们</a></small>
           </div><!-- footer -->                     

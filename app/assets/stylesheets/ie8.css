@@ -7,12 +7,17 @@ body {
 }
 
 #footer small {
-  padding: 8px 0 0 0;
+  height: 1em;
+  padding: 3px 0 5px 0;
 }
 
 /*=============================================================================
  * index page
  *===========================================================================*/
+#introduction {
+  top: 28px;
+}
+
 .popover {
   position:fixed;
   background: transparent;
@@ -128,13 +133,26 @@ body {
   list-style: none;
 }                  
 
-#contactContent div#join div#needs ul.position li:hover {
+#contactContent div#join div#needs ul.position li {
   list-style-image: url("css/bullet-turn.png");
 }
 
 #contactContent div#sidebar div#follow h3 {
   padding: 5px 0 0 0;
 }
+
+#sidebar {
+top: 0px;
+}
+
+#sidebar div#follow h3 {
+  height: 26px;
+  padding-bottom: 8px;
+}
+
+ #sidebar div#recommend div.description p {
+  line-height: 1.2em;
+}          
 
 /*=============================================================================
  * About page
