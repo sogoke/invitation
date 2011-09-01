@@ -141,7 +141,7 @@ td#grow p.explain {
 }
 
 #contactContent div#join div#needs ul.position li {
-  list-style-image: url(css/bullet-turn.png) no-repeat 0 0;
+  list-style-image: url(css/bullet-turn.png);
 }
 
 #contactContent div#sidebar div#follow h3 {

@@ -129,7 +129,7 @@ body {
 }                  
 
 #contactContent div#join div#needs ul.position li:hover {
-  list-style-image: url("css/bullet-turn.png") no-repeat 0 0;
+  list-style-image: url("css/bullet-turn.png");
 }
 
 #contactContent div#sidebar div#follow h3 {
