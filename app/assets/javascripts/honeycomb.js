@@ -330,8 +330,8 @@ $(document).ready(function() {
         bottomOrder = getOrder('bottom'),
         middleOrder = getOrder('middle');
 
-    //console.log('bottom is' + bottomOrder.length);
-    //console.log('middle is' + middleOrder.length);
+    console.log('bottom is' + bottomOrder.length);
+    console.log('middle is' + middleOrder.length);
 
     //////////////////////////////////////////////////////////////////
     // Adjust speed of honeycomb animation
