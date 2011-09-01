@@ -11,7 +11,7 @@ var DEFAULT_TUBE_NUMBER = 7;
 var BOTTOM_OFFSET = 10;
 var BOTTOM_TUBE_SIZE = 48;
 var BOTTOM_BLACKLIST = ['00','10','20','30','40','50','130','140','150','160','170','180','190','200','210','220','230','240','250','260',
-  '01','11','21','14','181', '171','191','201','211','241','251','261',
+  '01','11','21','41','181', '171','191','201','211','241','251','261',
   '02', '262','202','212', '192', '222','232','242','252','262',
   '203',
   '04', '194','204',
@@ -24,7 +24,7 @@ var MIDDLE_BLACKLIST = ['00','10','20','30','110','120','130','140','150','160',
   '01','11','121','131',
   '02','12',
   '03','13','133','173',
-  '04', '14','24','34','44','94','104','114', '124'];
+  '04', '14','24','34','44','54','94','104','114','124', '134'];
 
 var TOP_OFFSET = 50;
 var TOP_TUBE_SIZE = 80;
@@ -119,19 +119,19 @@ function getCraftsman(tube, message, name) {
 
   if (x < cx && y < cy) {
     craftsman.cls = 'topLeft';
-    craftsman.css = {'top': y + 150, 'left': x + 15};
+    craftsman.css = {'top': y + 120, 'left': x + 15};
     craftsman.html = '<strong class="topLeftName">' + name + '</strong><p class="topLeftMessage">' + message + '</p>';
   } else if (x >= cx && y < cy) {
     craftsman.cls = 'topRight';
-    craftsman.css = {'top': y + 150, 'left': x - 310};
+    craftsman.css = {'top': y + 120, 'left': x - 310};
     craftsman.html = '<strong class="topRightName">' + name + '</strong><p class="topRightMessage">' + message + '</p>'; 
   } else if (x >= cx && y >= cy) {
     craftsman.cls = 'bottomRight';
-    craftsman.css = {'top': y - 90, 'left': x - 310};
+    craftsman.css = {'top': y - 60, 'left': x - 310};
     craftsman.html = '<strong class="bottomRightName">' + name + '</strong><p class="bottomRightMessage">' + message + '</p>'; 
   } else if (x < cx && y >= cy) {
     craftsman.cls = 'bottomLeft';
-    craftsman.css = {'top': y - 90, 'left': x + 15};
+    craftsman.css = {'top': y - 60, 'left': x + 15};
     craftsman.html = '<strong class="bottomLeftName">' + name + '</strong><p class="bottomLeftMessage">' + message + '</p>'; 
   }
 
@@ -209,6 +209,7 @@ function setTube(level, x, y, name, avatar, message) {
 
   if (level === 0) {
     tube.mouseover(function(event) {
+        //console.log(x, y);
         if ($.browser.mozlla)  {
           event.stopImmediatePropagation();
           event.stopPropagation();
@@ -255,6 +256,7 @@ function setTube(level, x, y, name, avatar, message) {
 
   } else if (level === 1) {
     tube.mouseover(function(event) {
+        //console.log(x, y);
         if ($.browser.mozlla)  {
           event.stopImmediatePropagation();
           event.stopPropagation();
@@ -328,6 +330,9 @@ $(document).ready(function() {
         bottomOrder = getOrder('bottom'),
         middleOrder = getOrder('middle');
 
+    //console.log('bottom is' + bottomOrder.length);
+    //console.log('middle is' + middleOrder.length);
+
     //////////////////////////////////////////////////////////////////
     // Adjust speed of honeycomb animation
     //////////////////////////////////////////////////////////////////
@@ -355,7 +360,7 @@ $(document).ready(function() {
           for (j = 0; j < bottomOrder.length; j++) {
             x = bottomOrder[j][0];
             y = bottomOrder[j][1];
-            artist = artists[50+j];
+            artist = artists[middleOrder.length+j];
             if( artist ) {
               setTube(0, x, y, artist["name"], artist["avatar"], artist["description"]);
             }else {
