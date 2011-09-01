@@ -336,16 +336,24 @@ $(document).ready(function() {
     //////////////////////////////////////////////////////////////////
     // Adjust speed of honeycomb animation
     //////////////////////////////////////////////////////////////////
-    if ($.browser.msie && $.browser.version === 6.0) {
-    } else if ($.browser.msie && $.browser.version === 7.0) {
-    } else if ($.browser.msie && $.browser.version === 8.0) {
-    } else if ($.browser.msie && $.browser.version === 9.0) {
+    if ($.browser.msie && $.browser.version == 6.0) {
+    } else if ($.browser.msie && $.browser.version == 7.0) {
+    } else if ($.browser.msie && $.browser.version == 8.0) {
+    } else if ($.browser.msie && $.browser.version == 9.0) {
       }else if ($.browser.mozilla) {
       DURATION = 1600;
       WAITING = 800;
     } else if ($.browser.opera) {
       DURATION = 3000;
       WAITING = 2000;
+    }
+
+    /////////////////////////////////////////////////////////////////////
+    // Adjust CSS
+    /////////////////////////////////////////////////////////////////////
+    if ($.browser.mozilla && $.browser.version === '6.0') {
+      $('.popover div#request div.detail form.request fieldset input.button').css({'left': '3.26em'});
+    } else {
     }
 
     /////////////////////////////////////////////////////////////////////

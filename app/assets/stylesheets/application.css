@@ -21,6 +21,13 @@
 
 
 
+
+
+
+
+
+
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -149,6 +156,7 @@ a:visited {
   background-color: #EBEBEB;
   color: #999;
   font-size: 12px;
+  border-top: 1px solid #fcfcfc;
 }
 
 #footer small {
@@ -203,7 +211,7 @@ a:visited {
   width: 695px;
   height: auto;
   left: 0px;
-  top:30px;
+  top:31px;
 }
 
 #introduction tr {
@@ -235,6 +243,8 @@ td.value p.title span {
 }
 
 td.value p.subtitle {
+  position: relative;
+  top: 3px;
   color: #333;
   font-size: 16px;
 }
@@ -263,11 +273,6 @@ td#grow {
   padding-left: 10px;
 }
 
-td#grow p.explain {
-  position: relative;
-  top: -2px;
-  left: 0px;
-}
 /************************************************
  * Apply
  ***********************************************/
@@ -275,7 +280,7 @@ td#grow p.explain {
   width: 304px;
   height: 230px;
   position: absolute;
-  top: -29px;
+  top: -28px;
   left: 695px;
   right: 0;
   background-color: #F2ECE9;
@@ -667,8 +672,8 @@ input#applyButton {
 
 .popover div#request div.detail form.request fieldset input.button {
   position: relative;
-  top: 0;
-  left: 3.7em;
+  top: 10px;
+  left: 3.42em;
   color: #ffffff;
   background: #ca5335;
   font-size: 18px;
@@ -677,7 +682,10 @@ input#applyButton {
 }
 
 .popover div#request div.detail form.request fieldset textarea.selfIntro {
-  margin: 10px 0 0 0;
+  position: relative;
+  top: 10px;
+  left: 0;
+  margin: 0;
   width: 256px;
   height: 120px;
   color: #838383;

@@ -61,7 +61,7 @@ $("form.request").validate({
 			 required: "<strong class='nicknameError' style='display: inline'><img src='assets/error.png' class='icon' /><span class='message'>昵称不能为空</span></strong>",
 			 minlength: "<strong class='nicknameError' style='display: inline'><img src='assets/error.png' class='icon' /><span class='message'>昵称长度应大于2</span></strong>",
 			 maxlength: "<strong class='nicknameError' style='display: inline'><img src='assets/error.png' class='icon' /><span class='message'>昵称长度应小于30</span></strong>",
-			 notEqual: "<strong class='nicknameError' style='display: inline'><img src='assets/error.png' class='icon' /><span class='message'>昵称不可为空</span></strong>",
+			 notEqual: "<strong class='nicknameError' style='display: inline'><img src='assets/error.png' class='icon' /><span class='message'>昵称不能为空</span></strong>",
 			 userNameUniqueness: "<strong class='nicknameError' style='display: inline'><img src='assets/error.png' class='icon' /><span class='message'>昵称已被占用</span></strong>",
 			 userNameValid: "<strong class='nicknameError' style='display: inline'><img src='assets/error.png' class='icon' /><span class='message'>中英文、数字与下划线</span></strong>"
 		 },

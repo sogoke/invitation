@@ -23,7 +23,7 @@ body {
 }
 
 #introduction {
-  top: 29px;
+  top: 30px;
 }
 
 .popover div#feedback {
@@ -65,7 +65,7 @@ body {
   margin: -5px 0 0 10px;
 }
 
-#craftsman.topLeft {
+.topLeft {
   background: url("css/BG-craftsman-top-left.gif") no-repeat 0 0;
 }
 

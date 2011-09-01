@@ -15,7 +15,7 @@ body {
  * index page
  *===========================================================================*/
 #introduction {
-  top: 28px;
+  top: 29px;
 }
 
 .popover {
@@ -68,7 +68,7 @@ body {
 }
 
 .popover div#feedback img.feedbackClose {
-  top: 30px;
+  top: 29px;
 }
 
 .topLeft {
