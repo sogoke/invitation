@@ -15,8 +15,9 @@ $('.popover img.feedbackClose').click(function() {
 
 Placeholder.init();
 
-$('.popover div#request div.detail form.request fieldset textarea.selfIntro').keydown(function() {
+$('.popover div#request div.detail form.request fieldset textarea.selfIntro').keyup(function() {
     $('.popover div#request div.detail form.request fieldset strong.selfIntroError').hide();
+
     var left, exceed, inputs = $(this).val().length;
 
     if (inputs == SELFINTRO_LENGTH) {
