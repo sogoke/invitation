@@ -116,7 +116,7 @@ function getCraftsman(tube, rawMessage, name) {
       y = tube.attr('y'),
       cx = VISUAL_WIDTH / 2,
       cy = VISUAL_HEIGHT / 2,
-      message = rawMessage.replace('\/n', '').replace('<br \/>', ''),
+      message = rawMessage.replace('\\n', '').replace('<br \/>', ''),
       lines =  Math.floor(message.length / GRAFTSMAN_CHAR_NUMBER) + 1,
       messageHTML = '';
 
@@ -341,16 +341,16 @@ $(document).ready(function() {
     //////////////////////////////////////////////////////////////////
     // Adjust speed of honeycomb animation
     //////////////////////////////////////////////////////////////////
-    if ($.browser.msie && $.browser.version == 6.0) {
-    } else if ($.browser.msie && $.browser.version == 7.0) {
-    } else if ($.browser.msie && $.browser.version == 8.0) {
-    } else if ($.browser.msie && $.browser.version == 9.0) {
+    if ($.browser.msie && $.browser.version === '6.0') {
+    } else if ($.browser.msie && $.browser.version == '7.0') {
+    } else if ($.browser.msie && $.browser.version == '8.0') {
+    } else if ($.browser.msie && $.browser.version == '9.0') {
       }else if ($.browser.mozilla) {
       DURATION = 1000;
       WAITING = 600;
     } else if ($.browser.opera) {
       DURATION = 1200;
-      WAITING = 500;
+      WAITING = 800;
     }
 
     /////////////////////////////////////////////////////////////////////

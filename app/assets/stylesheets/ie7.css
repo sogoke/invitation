@@ -36,7 +36,7 @@ body {
 }             
 
 .popover div#request img.requestClose {
-  left: 541px;
+  left: 621px;
 }
 
 .popover div#request div.detail h4.title {
@@ -81,8 +81,10 @@ body {
   left: 0;
 }              
 
- .popover div#request div.detail form.request fieldset strong {
-  margin: -5px 0 0 10px;
+.popover div#request div.detail form.request fieldset strong {
+  position: relative;
+  top: -15px;
+  left: 10px;
 }
 
 .topLeft {
@@ -91,9 +93,13 @@ body {
 
 #craftsman .topLeftMessage {
   position: relative;
-  left: 5px;
+  left: 85px;
   top:30px;
   padding: 5px 0 0 0;
+}
+
+#craftsman .topLeftName {
+  font-size: 0.96em;
 }
 
 .topRight {
@@ -102,9 +108,13 @@ body {
 
 #craftsman .topRightMessage {
   position: relative;
-  right: 90px;
+  right: 85px;
   top: 30px;
 }                  
+
+#craftsman .topRightName {
+  font-size: 0.96em;
+}
 
 .bottomLeft {
   background: url("css/BG-craftsman-bottom-left.gif") no-repeat 0 0;
@@ -112,9 +122,13 @@ body {
 
 #craftsman .bottomLeftMessage {
   position: relative;
-  left: 90px;
+  left: 85px;
   top:30px;
 }                  
+
+#craftsman .bottomLeftName {
+  font-size: 0.96em;
+}
 
 .bottomRight {
   background: url("css/BG-craftsman-bottom-right.gif") no-repeat 0 0;
@@ -126,6 +140,9 @@ body {
   top:30px;
 }
 
+#craftsman .bottomRightName {
+  font-size: 0.96em;
+}
 /*=============================================================================
  * contact page
  *===========================================================================*/
