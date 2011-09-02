@@ -26,13 +26,16 @@ body {
 }
 
 .popover div#feedback {
-  background: url("css/BG-feedback.gif") no-repeat center center;
   z-index: 8;
 }
 
 .popover div#request img.requestClose {
-  left: 641px;
+  left: 541px;
 }
+
+ .popover div#request div.detail h4.title {
+  font-family: "Microsoft YaHei", "SimSun";
+}               
 
 .popover div#request div.detail form.request fieldset label.nickname {
   position: relative;
@@ -48,7 +51,7 @@ body {
 
  .popover div#request div.detail form.request fieldset label.selfIntro {
   position: relative;
-  top: -100px;
+  top: -95px;
   left: 0;
 }                      
 
@@ -65,6 +68,10 @@ body {
 
 .popover div#request div.detail form.request fieldset input.button {
   left: 3.3em;
+}
+
+.popover div#request div.detail form.request fieldset span.selfIntroCounter {
+  top: 180px;
 }
 
 .popover div#feedback img.feedbackClose {
@@ -118,15 +125,10 @@ body {
 /*=============================================================================
  * contact page
  *===========================================================================*/
-#contactContent div#join div.jobs a.back2top {
-  margin-top: 100px;
-}
-
 #contactContent div#join div.job a.back2top {
   position: relative;
-  top: 0;
+  bottom: 1px;
   right: 0;
-  padding: 3px 0 0 0;
 }
 
 #contactContent div#join div#needs ul.position li {
@@ -151,9 +153,8 @@ top: 0px;
 }
 
  #sidebar div#recommend div.description p {
-  line-height: 1.2em;
+  line-height: 1.3em;
 }          
-
 /*=============================================================================
  * About page
  *===========================================================================*/

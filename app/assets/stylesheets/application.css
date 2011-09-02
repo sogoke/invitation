@@ -46,6 +46,10 @@
 
 
 
+
+
+
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -115,7 +119,6 @@ a {
 
 a:visited {
   border: none;
-  text-decoration: none;
 }
 
 /********************************************************************
@@ -803,8 +806,8 @@ input#applyButton {
 
 #aboutContent div#about p.email {
   margin: 18px 0 0 0;
-  font-size: 14px;
-  font-weight: bold;
+  font-size: 1.1em;
+  color: #0055d4;
 }
 
  /*****************************************************************************
@@ -822,8 +825,13 @@ input#applyButton {
 }
 
 #join p.email {
-  font-size: 14px;
-  font-weight: bold;
+  font-size: 1.1em;
+}
+
+#join p.email a {
+  color: #0055d4;
+  font-size: 1.1em;
+  text-decoration: none;
 }
 
 #join h3#joinUS {

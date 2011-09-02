@@ -32,7 +32,11 @@ body {
 }
 
 .popover div#request img.requestClose {
-  left: 641px;
+  left: 541px;
+}
+
+.popover div#request div.detail h4.title {
+  font-family: "Microsoft YaHei", "SimSun";
 }
 
 .popover div#request div.detail form.request fieldset label.nickname {
@@ -47,6 +51,12 @@ body {
   margin: 0 0 0 2em;
 }
 
+.popover div#request div.detail form.request fieldset label.selfIntro {
+  position: relative;
+  top: -95px;
+  left: 0;
+}              
+
 .popover div#request div.detail form.request fieldset input.nickname {
    height: 1em;
    padding: 13px 0;
@@ -60,6 +70,12 @@ body {
 .popover div#request div.detail form.request fieldset input.button {
   left: .7em;
 }
+
+  .popover div#request div.detail form.request fieldset label.selfIntro {
+  position: relative;
+  top: -95px;
+  left: 0;
+}              
 
  .popover div#request div.detail form.request fieldset strong {
   margin: -5px 0 0 10px;
@@ -146,7 +162,7 @@ body {
 }
 
 #sidebar div#recommend div.description p {
-  line-height: 1.2em;
+  line-height: 1.3em;
 }                          
 /*=============================================================================
  * About page
