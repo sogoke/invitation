@@ -1,5 +1,6 @@
 class ArtistsController < ApplicationController
   def create
+    params[:artist][:description].gsub!(/\r\n/, " ")
     @artist = Artist.new(params[:artist])
     @artist.save!
     
