@@ -108,8 +108,12 @@ body {
 
 #craftsman .topLeftMessage {
   position: relative;
-  left: 90px;
+  left: 85px;
   top:30px;
+}
+
+#craftsman .topLeftName {
+  font-size: 0.96em;
 }
 
 .topRight {
@@ -118,9 +122,13 @@ body {
 
 #craftsman .topRightMessage {
   position: relative;
-  right: 90px;
+  right: 85px;
   top: 30px;
 }                  
+
+#craftsman .topRightName {
+  font-size: 0.96em;
+}
 
 .bottomLeft {
   background: url(css/BG-craftsman-bottom-left.gif) no-repeat 0 0;
@@ -128,7 +136,7 @@ body {
 
 #craftsman .bottomLeftMessage {
   position: relative;
-  left: 90px;
+  left: 85px;
   top:30px;
 }                  
 
@@ -138,10 +146,13 @@ body {
 
 #craftsman .bottomRightMessage {
   position: relative;
-  right: 90px;
+  right: 85px;
   top:30px;
 }
 
+#craftsman .bottomLeftName {
+  font-size: 0.96em;
+}
 /*=============================================================================
  * contact page
  *===========================================================================*/

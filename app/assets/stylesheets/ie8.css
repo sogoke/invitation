@@ -80,7 +80,7 @@ body {
 
 #craftsman .topLeftMessage {
   position: relative;
-  left: 90px;
+  left: 85px;
   top: 30px;
 }
 
@@ -90,7 +90,7 @@ body {
 
 #craftsman .topRightMessage {
   position: relative;
-  right: 90px;
+  right: 85px;
   top: 30px;
 }                  
 
@@ -100,7 +100,7 @@ body {
 
 #craftsman .bottomLeftMessage {
   position: relative;
-  left: 90px;
+  left: 85px;
   top: 30px;
 }                  
 
@@ -110,7 +110,7 @@ body {
 
 #craftsman .bottomRightMessage {
   position: relative;
-  right: 90px;
+  right: 85px;
   top: 30px;
 }
 
