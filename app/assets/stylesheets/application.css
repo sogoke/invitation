@@ -31,6 +31,21 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -181,7 +196,6 @@ a:visited {
 
 #footer small#links a {
   color: #aaaaaa;
-  text-decoration: underline;
 }
 /**********************************************************
  * End of Footer
@@ -263,7 +277,7 @@ td.value p.explain {
 
 td#discover {
   position: relative;
-  padding-left: 10px;
+  padding-left: 30px;
 }
 
 td#share {
@@ -273,7 +287,7 @@ td#share {
 
 td#grow {
   position: relative;
-  padding-left: 10px;
+  padding-right: 20px;
 }
 
 /************************************************
@@ -321,7 +335,7 @@ td#grow {
 input.button{
   width: 111px;
   height: 37px;
-  background: #ca5335;
+  background: #e72f2c;
   color: #ffffff;
   font-size: 14px;
   font-weight: bold;
@@ -539,20 +553,20 @@ input#applyButton {
  ***********************************************/
 .popover div#request {
   position: relative;
-  width: 660px;
+  width: 560px;
   height: auto;
   top: 98px;
   left: 50%;
-  margin: 0 0 0 -330px;
+  margin: 0 0 0 -280px;
   background: #ffffff;
-  padding: 0 0 70px 0;
+  padding: 0 0 100px 0;
   border: 1px solid #f8f8f5;
 }
 
 .popover div#request img.requestClose {
   position: absolute;
   top: -1px;
-  left: 641px;
+  left: 541px;
   z-index:1000;
   cursor: pointer;
 }
@@ -593,13 +607,12 @@ input#applyButton {
 
 .popover div#request div.detail p.caution {
   position: relative;
-  top: 35px;
+  top: 70px;
   left: 0px;
-  width: 560px;
+  width: 31em;
   height: 1em;
-  margin: 35px 0 0 0;
-  padding: 10px 0;
-  text-align: center;
+  margin: 0;
+  padding: 10px 10px;
   background: #f8f8f5;
   border: 1px solid #f0f0f0;
 }
@@ -609,7 +622,7 @@ input#applyButton {
  *************************************/
 .popover div#request div.detail form.request {
   position: relative;
-  top: 25px;
+  top: 60px;
   left: 0;
   width: auto;
   height: auto;
@@ -675,10 +688,10 @@ input#applyButton {
 
 .popover div#request div.detail form.request fieldset input.button {
   position: relative;
-  top: 10px;
+  top: 12px;
   left: 3.42em;
   color: #ffffff;
-  background: #ca5335;
+  background: #e72f2c;
   font-size: 18px;
   border: none;
   cursor: pointer;
@@ -713,11 +726,28 @@ input#applyButton {
   left: 0;
 }
 
-.popover div#request div.detail form.request fieldset strong.selfIntroCounter {
-  position: relative;
-  top: -60px;
-  left: 0px;
+.popover div#request div.detail form.request fieldset span.selfIntroCounter {
+  position: absolute;
+  top: 200px;
+  left: 330px;
+  margin: 0;
+  padding: 0;
   color: #444444;
+  display: block;
+  max-width: 7em;
+  line-height: 1.5em;
+}
+
+.popover div#request div.detail form.request fieldset span.selfIntroCounter em.left {
+  font-size: 1.4em;
+  font-weight: bold;
+  color: #948361;
+}
+
+.popover div#request div.detail form.request fieldset span.selfIntroCounter em.exceed {
+  font-size: 1.4em;
+  font-weight: bold;
+  color: #e72f2c;
 }
 
 .popover div#request div.detail form.request fieldset strong img.icon {
@@ -809,7 +839,7 @@ input#applyButton {
   width: 700px;
   font-family: "Microsoft YaHei", "SimSun";
   margin: 15px 0 0 0;
-  padding-bottom: 8px;
+  padding-bottom: 18px;
   border-bottom: 1px solid #eeeeee;
   line-height: 18px;
 }
@@ -819,12 +849,14 @@ input#applyButton {
     top: 0;
     left: 0;
     margin: 30px 0 0 0;
+    padding: 0 0 30px 0;
     line-height: 16px;
 }
 
 #join div#needs ul.position li {
   list-style: none;
   margin: 0 0 0 20px;
+  font-family: "SimSun";
 }                          
 
 #join div#needs ul.position li:hover {
@@ -863,7 +895,7 @@ input#applyButton {
 }
 
 #join div.job p.position {
-  color: #e2a70a;
+  color: #e72f2c;
   font-family:"Microsoft YaHei", "SimHei";
   font-size: 20px;
   font-weight: bold;
@@ -954,6 +986,7 @@ input#applyButton {
   position: relative;
   top: 10px;
   left: 10px;
+  margin: 0 0 4px 0;
   font-size: 24px;
   color: #666666;
   font-family: "Microsoft YaHei", "SimHei";
@@ -965,7 +998,7 @@ input#applyButton {
 
 #sidebar div#recommend div.description {
   position: absolute;
-  top: 35px;
+  top: 36px;
   left: 114px;
   font-size: 12px;
   color: #838383;
@@ -974,7 +1007,7 @@ input#applyButton {
 }
 
 #sidebar div#recommend div.description p {
-  line-height: 1.4em;
+  line-height: 1.43em;
 }
 
 #sidebar img.label {

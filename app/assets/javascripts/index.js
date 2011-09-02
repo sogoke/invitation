@@ -19,9 +19,9 @@ $('.popover div#request div.detail form.request fieldset textarea.selfIntro').ke
 
     if (inputs >= SELFINTRO_LENGTH) {
       exceed = inputs - SELFINTRO_LENGTH;
-      $('strong.selfIntroCounter').html('最多140字，已超出' + exceed + '字').show();
+      $('span.selfIntroCounter').html('最多140个字，已超出<em class="exceed">' + exceed + '</em>个字').show();
     } else {
       left = SELFINTRO_LENGTH - inputs;
-      $('strong.selfIntroCounter').html('最多140字，还剩' + left + '字').show();
+      $('span.selfIntroCounter').html('最多140个字，还剩<em class="left">' + left + '</em>个字').show();
     }
 });
