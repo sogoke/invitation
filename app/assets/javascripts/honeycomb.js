@@ -33,6 +33,7 @@ var TOP_BLACKLIST = ['00','10','20','70','80','90','100','110','120',
   '02','12','22','72','82','92','102','112','122'];
 
 var SELFINTRO_LENGTH = 140;
+var GRAFTSMAN_CHAR_NUMBER = 18;
 ///////////////////////////////////////////////////////////////////////////////
 // Global Variables
 ///////////////////////////////////////////////////////////////////////////////
@@ -62,7 +63,6 @@ function getOrder(level) {
     y = Math.floor(VISUAL_HEIGHT / MIDDLE_TUBE_SIZE);
   } else {
   }
-
 
   if (x % 2) {
     factorX = Math.floor(x / 2) + 1;
@@ -110,29 +110,36 @@ function getOrder(level) {
   return order;
 }
 
-function getCraftsman(tube, message, name) {
-  var craftsman = {},
+function getCraftsman(tube, rawMessage, name) {
+  var craftsman = {}, i,
       x = tube.attr('x'),
       y = tube.attr('y'),
       cx = VISUAL_WIDTH / 2,
-      cy = VISUAL_HEIGHT / 2;
+      cy = VISUAL_HEIGHT / 2,
+      message = rawMessage.replace('\/n', '').replace('<br \/>', ''),
+      lines =  Math.floor(message.length / GRAFTSMAN_CHAR_NUMBER) + 1,
+      messageHTML = '';
+
+  for (i = 0; i < lines; i++) {
+    messageHTML += ('<p>' + message.substring(i * GRAFTSMAN_CHAR_NUMBER, (i + 1) * GRAFTSMAN_CHAR_NUMBER) + '</p>');
+  }
 
   if (x < cx && y < cy) {
     craftsman.cls = 'topLeft';
     craftsman.css = {'top': y + 120, 'left': x + 15};
-    craftsman.html = '<strong class="topLeftName">' + name + '</strong><p class="topLeftMessage">' + message + '</p>';
+    craftsman.html = '<strong class="topLeftName">' + name + '</strong><div class="topLeftMessage">' + messageHTML + '</div>';
   } else if (x >= cx && y < cy) {
     craftsman.cls = 'topRight';
     craftsman.css = {'top': y + 120, 'left': x - 310};
-    craftsman.html = '<strong class="topRightName">' + name + '</strong><p class="topRightMessage">' + message + '</p>'; 
+    craftsman.html = '<strong class="topRightName">' + name + '</strong><div class="topRightMessage">' + messageHTML + '</div>'; 
   } else if (x >= cx && y >= cy) {
     craftsman.cls = 'bottomRight';
     craftsman.css = {'top': y - 60, 'left': x - 310};
-    craftsman.html = '<strong class="bottomRightName">' + name + '</strong><p class="bottomRightMessage">' + message + '</p>'; 
+    craftsman.html = '<strong class="bottomRightName">' + name + '</strong><div class="bottomRightMessage">' + messageHTML + '</div>'; 
   } else if (x < cx && y >= cy) {
     craftsman.cls = 'bottomLeft';
     craftsman.css = {'top': y - 60, 'left': x + 15};
-    craftsman.html = '<strong class="bottomLeftName">' + name + '</strong><p class="bottomLeftMessage">' + message + '</p>'; 
+    craftsman.html = '<strong class="bottomLeftName">' + name + '</strong><div class="bottomLeftMessage">' + messageHTML + '</div>'; 
   }
 
   return craftsman;
@@ -209,9 +216,8 @@ function setTube(level, x, y, name, avatar, message) {
 
   if (level === 0) {
     tube.mouseover(function(event) {
-        //console.log(x, y);
-        if ($.browser.mozlla)  {
-          event.stopImmediatePropagation();
+        if ($.browser.mozilla)  {
+          //event.stopImmediatePropagation();
           event.stopPropagation();
         } else if ($.browser.msie) {
           event.stopPropagation();       
@@ -238,8 +244,8 @@ function setTube(level, x, y, name, avatar, message) {
     });
 
     tube.mouseout(function(event) {
-        if ($.browser.mozlla)  {
-          event.stopImmediatePropagation();
+        if ($.browser.mozilla)  {
+          //event.stopImmediatePropagation();
           event.stopPropagation();
         } else if ($.browser.msie) {
           event.stopPropagation();       
@@ -256,9 +262,8 @@ function setTube(level, x, y, name, avatar, message) {
 
   } else if (level === 1) {
     tube.mouseover(function(event) {
-        //console.log(x, y);
-        if ($.browser.mozlla)  {
-          event.stopImmediatePropagation();
+        if ($.browser.mozilla)  {
+          //event.stopImmediatePropagation();
           event.stopPropagation();
         } else if ($.browser.msie) {
           event.stopPropagation();
@@ -284,8 +289,8 @@ function setTube(level, x, y, name, avatar, message) {
     });
 
     tube.mouseout(function(event) {
-        if ($.browser.mozlla)  {
-          event.stopImmediatePropagation();
+        if ($.browser.mozilla)  {
+          //event.stopImmediatePropagation();
           event.stopPropagation();
         }
 
@@ -341,11 +346,11 @@ $(document).ready(function() {
     } else if ($.browser.msie && $.browser.version == 8.0) {
     } else if ($.browser.msie && $.browser.version == 9.0) {
       }else if ($.browser.mozilla) {
-      DURATION = 1600;
-      WAITING = 800;
+      DURATION = 1000;
+      WAITING = 600;
     } else if ($.browser.opera) {
-      DURATION = 3000;
-      WAITING = 2000;
+      DURATION = 1200;
+      WAITING = 500;
     }
 
     /////////////////////////////////////////////////////////////////////
@@ -372,7 +377,7 @@ $(document).ready(function() {
             if( artist ) {
               setTube(0, x, y, artist["name"], artist["avatar"], artist["description"]);
             }else {
-              setTube(0, x, y, "手工客", "assets/tube/default/" + Math.randInt(DEFAULT_TUBE_NUMBER) + ".png", "申请邀请码之后，你就出现在这里");
+              setTube(0, x, y, "手工客", "assets/tube/default/" + Math.randInt(DEFAULT_TUBE_NUMBER) + ".png", "申请邀请码之后，你也会出现在这里");
             }
           }
 
@@ -384,7 +389,7 @@ $(document).ready(function() {
             if( artist ) {
               setTube(1, x, y, artist["name"], artist["avatar"], artist["description"]);
             } else {
-              setTube(1, x, y, "手工客", "assets/tube/default/" + Math.randInt(DEFAULT_TUBE_NUMBER) + ".png", "申请邀请码之后，你就出现在这里");
+              setTube(1, x, y, "手工客", "assets/tube/default/" + Math.randInt(DEFAULT_TUBE_NUMBER) + ".png", "申请邀请码之后，你也会出现在这里");
             }
           }
 

@@ -31,6 +31,10 @@ body {
   z-index: 8;
 }
 
+.popover div#feedback img.feedbackClose {
+  top: 30px;
+}             
+
 .popover div#request img.requestClose {
   left: 541px;
 }
@@ -98,9 +102,8 @@ body {
 
 #craftsman .topRightMessage {
   position: relative;
-  right: 5px;
+  right: 90px;
   top: 30px;
-  padding: 5px 0 0 0;
 }                  
 
 .bottomLeft {
@@ -109,9 +112,8 @@ body {
 
 #craftsman .bottomLeftMessage {
   position: relative;
-  left: 5px;
+  left: 90px;
   top:30px;
-  padding: 5px 0 0 0;
 }                  
 
 .bottomRight {
@@ -120,9 +122,8 @@ body {
 
 #craftsman .bottomRightMessage {
   position: relative;
-  right: 5px;
+  right: 90px;
   top:30px;
-  padding: 5px 0 0 0;
 }
 
 /*=============================================================================
@@ -162,7 +163,7 @@ body {
 }
 
 #sidebar div#recommend div.description p {
-  line-height: 1.3em;
+  line-height: 1.25em;
 }                          
 /*=============================================================================
  * About page

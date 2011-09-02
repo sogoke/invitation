@@ -29,12 +29,18 @@ body {
   -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#B2000000,endColorstr=#B2000000)"; /* IE8 */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#B2000000,endColorstr=#B2000000);   /* IE6 & 7 */
   zoom: 1;
+  height: 150%;
 }
 
 .popover div#feedback {
   background: url(css/BG-feedback.gif) no-repeat center center;
   z-index: 8;
+  top: 20%;
 }
+
+ .popover div#feedback img.feedbackClose {
+  top: 30px;
+}            
 
 .popover div#request img.requestClose {
   left: 541px;
@@ -89,7 +95,7 @@ body {
 }            
 
 .popover div#request div.detail form.request fieldset span.selfIntroCounter {
-  max-width: 98px;
+  max-width: 5em;
 }
 
 .popover div#feedback p.thanks {
@@ -102,9 +108,8 @@ body {
 
 #craftsman .topLeftMessage {
   position: relative;
-  left: 5px;
+  left: 90px;
   top:30px;
-  padding: 5px 0 0 0;
 }
 
 .topRight {
@@ -113,9 +118,8 @@ body {
 
 #craftsman .topRightMessage {
   position: relative;
-  right: 5px;
+  right: 90px;
   top: 30px;
-  padding: 5px 0 0 0;
 }                  
 
 .bottomLeft {
@@ -124,9 +128,8 @@ body {
 
 #craftsman .bottomLeftMessage {
   position: relative;
-  left: 5px;
+  left: 90px;
   top:30px;
-  padding: 5px 0 0 0;
 }                  
 
 .bottomRight {
@@ -135,9 +138,8 @@ body {
 
 #craftsman .bottomRightMessage {
   position: relative;
-  right: 5px;
+  right: 90px;
   top:30px;
-  padding: 5px 0 0 0;
 }
 
 /*=============================================================================
@@ -177,7 +179,7 @@ top: 0;
 }
 
 #sidebar div#recommend div.description p {
-  line-height: 1.3em;
+  line-height: 1.25em;
 }
 /*=============================================================================
  * About page

@@ -50,6 +50,17 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -448,7 +459,7 @@ input#applyButton {
 
 #craftsman .topLeftName {
   position: absolute;
-  top: 145px;
+  top: 148px;
   right: 30px;
   font-family: "Microsoft YaHei", "SimHei";
   font-size:35px;
@@ -459,11 +470,13 @@ input#applyButton {
 }
 
 #craftsman .topLeftMessage {
-  width: 240px;
-  margin-left: 85px;
-  margin-top:33px;
+  position: relative;
+  top: 33px;
+  left: 88px;
+  width: auto;
   font-size: 14px;
   color: #000;
+  white-space: pre;
 }
 
 #craftsman.topRight {
@@ -483,11 +496,14 @@ input#applyButton {
 }
 
 #craftsman .topRightMessage {
-  width: 240px;
-  margin-left: 25px;
-  margin-top:30px;
+  position: relative;
+  width: auto;
+  height: auto;
+  left: 25px;
+  top:33px;
   font-size: 14px;
   color: #000;
+  white-space: pre;
 }                  
 
 #craftsman.bottomLeft {
@@ -496,8 +512,8 @@ input#applyButton {
 
 #craftsman .bottomLeftName {
   position: absolute;
-  top: 145px;
-  right: 30px;
+  top: 155px;
+  right: 20px;
   font-family: "Microsoft YaHei", "SimHei";
   font-size:30px;
   color: #d45500;
@@ -507,11 +523,13 @@ input#applyButton {
 }
 
 #craftsman .bottomLeftMessage {
-  width: 240px;
-  margin-left: 85px;
-  margin-top:30px;
+  position: relative;
+  top: 33px;
+  left: 85px;
+  width: auto;
   font-size: 14px;
   color: #000;
+  white-space: pre;
 }                  
 
 #craftsman.bottomRight {
@@ -520,7 +538,7 @@ input#applyButton {
 
 #craftsman .bottomRightName {
   position: absolute;
-  top: 145px;
+  top: 155px;
   right: 80px;
   font-family: "Microsoft YaHei", "SimHei";
   font-size:30px;
@@ -531,11 +549,14 @@ input#applyButton {
 }
 
 #craftsman .bottomRightMessage {
-  width: 240px;
-  margin-left: 25px;
-  margin-top:30px;
+  position: relative;
+  width: auto;
+  height: auto;
+  left: 25px;
+  top: 30px;
   font-size: 14px;
   color: #000;
+  white-space: pre;
 }                  
 
 #craftsman .avatar {
@@ -736,9 +757,12 @@ input#applyButton {
   margin: 0;
   padding: 0;
   color: #444444;
-  display: block;
   max-width: 7em;
   line-height: 1.5em;
+}
+
+.popover div#request div.detail form.request fieldset span.selfIntroCounter em.full {
+  color: #e72f2c;
 }
 
 .popover div#request div.detail form.request fieldset span.selfIntroCounter em.left {
@@ -795,8 +819,14 @@ input#applyButton {
     margin-top: 15px;
 }
 
-#aboutContent div#about div#hope p {
+#aboutContent div#about div#hope p.email {
   line-height: 1.5em;
+}
+
+#aboutContent div#about div#hope p.email a {
+color: #0055D4;
+font-size: 1.1em;
+text-decoration: none;
 }
 
 #aboutContent div#about p.title {
@@ -983,7 +1013,10 @@ input#applyButton {
   margin: 45px 0 0 0;
   padding: 0 0 5px 0;
   background-color:#f8f8f8;
-  border: 1px solid #f1f1f1;
+  border-top: 1px solid #fefefe;
+  border-left: 1px solid #fefefe;
+  border-right: 1px solid #f0f0f0;
+  border-bottom: 1px solid #efefef;
 }
 
 #sidebar div#recommend a {
