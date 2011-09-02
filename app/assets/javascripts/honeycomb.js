@@ -372,7 +372,7 @@ $(document).ready(function() {
             if( artist ) {
               setTube(0, x, y, artist["name"], artist["avatar"], artist["description"]);
             }else {
-              setTube(0, x, y, "手工客", "assets/tube/default/" + Math.randInt(DEFAULT_TUBE_NUMBER) + ".png", "等你来");
+              setTube(0, x, y, "手工客", "assets/tube/default/" + Math.randInt(DEFAULT_TUBE_NUMBER) + ".png", "申请邀请码之后，你就出现在这里");
             }
           }
 
@@ -384,7 +384,7 @@ $(document).ready(function() {
             if( artist ) {
               setTube(1, x, y, artist["name"], artist["avatar"], artist["description"]);
             } else {
-              setTube(1, x, y, "手工客", "assets/tube/default/" + Math.randInt(DEFAULT_TUBE_NUMBER) + ".png", "等你来");
+              setTube(1, x, y, "手工客", "assets/tube/default/" + Math.randInt(DEFAULT_TUBE_NUMBER) + ".png", "申请邀请码之后，你就出现在这里");
             }
           }
 
