@@ -463,6 +463,26 @@ input#applyButton {
   font-family: "Microsoft YaHei", "SimSun";
 }
 
+#craftsman div.fakeBG {
+  visibility: hidden;
+}
+
+#craftsman div#topLeftFakeBG {
+  background: url("css/BG-craftsman-top-left.png") no-repeat 0 0;  
+}
+
+#craftsman div#topRightFakeBG {
+  background: url("css/BG-craftsman-top-right.png") no-repeat 0 0;  
+}
+
+#craftsman div#bottomLeftFakeBG {
+  background: url("css/BG-craftsman-bottom-left.png") no-repeat 0 0;  
+}
+
+#craftsman div#bottomRightFakeBG {
+  background: url("css/BG-craftsman-bottom-right.png") no-repeat 0 0;  
+}
+
 #craftsman.topLeft {
  background: url("css/BG-craftsman-top-left.png") no-repeat 0 0;
 }

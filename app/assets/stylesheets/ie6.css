@@ -118,6 +118,22 @@ td#grow {
   padding: 5px 0 0 0;
 }
 
+#craftsman div#topLeftFakeBG {
+  background: url("css/BG-craftsman-top-left.gif") no-repeat 0 0;  
+}
+
+#craftsman div#topRightFakeBG {
+  background: url("css/BG-craftsman-top-right.gif") no-repeat 0 0;  
+}
+
+#craftsman div#bottomLeftFakeBG {
+  background: url("css/BG-craftsman-bottom-left.gif") no-repeat 0 0;  
+}
+
+#craftsman div#bottomRightFakeBG {
+  background: url("css/BG-craftsman-bottom-right.gif") no-repeat 0 0;  
+}
+
 #craftsman.topLeft {
   background: url(css/BG-craftsman-top-left.gif) no-repeat 0 0;
 }
