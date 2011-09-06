@@ -75,6 +75,7 @@
 
 
 
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -1051,8 +1052,8 @@ text-decoration: none;
   margin: 45px 0 0 0;
   padding: 0 0 5px 0;
   background-color:#f8f8f8;
-  border-top: 1px solid #fefefe;
-  border-left: 1px solid #fefefe;
+  border-top: 1px solid #f4f4f4;
+  border-left: 1px solid #efefef;
   border-right: 1px solid #f0f0f0;
   border-bottom: 1px solid #efefef;
 }
