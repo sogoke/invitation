@@ -72,6 +72,9 @@
 
 
 
+
+
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -504,10 +507,12 @@ input#applyButton {
   position: relative;
   top: 33px;
   left: 85px;
-  width: auto;
+  width: 252px;
+  height: 128px;
   font-size: 14px;
   color: #000;
   white-space: pre;
+  overflow: hidden;
 }
 
 #craftsman.topRight {
@@ -528,13 +533,14 @@ input#applyButton {
 
 #craftsman .topRightMessage {
   position: relative;
-  width: auto;
-  height: auto;
+  width: 252px;
+  height: 128px;
   left: 25px;
   top:33px;
   font-size: 14px;
   color: #000;
   white-space: pre;
+  overflow: hidden;
 }                  
 
 #craftsman.bottomLeft {
@@ -557,10 +563,12 @@ input#applyButton {
   position: relative;
   top: 33px;
   left: 85px;
-  width: auto;
+  width: 252px;
+  height: 128px;
   font-size: 14px;
   color: #000;
   white-space: pre;
+  overflow: hidden;
 }                  
 
 #craftsman.bottomRight {
@@ -581,20 +589,15 @@ input#applyButton {
 
 #craftsman .bottomRightMessage {
   position: relative;
-  width: auto;
-  height: auto;
+  width: 252px;
+  height: 128px;
   left: 25px;
   top: 30px;
   font-size: 14px;
   color: #000;
   white-space: pre;
+  overflow: hidden;
 }                  
-
-#craftsman .avatar {
-  border: 1px solid #666666;
-  margin-left: 60px;
-  margin-top: 24px;
-}
 
 .craftsmanClose {
   position: absolute;
