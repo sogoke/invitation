@@ -76,6 +76,7 @@
 
 
 
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -511,9 +512,9 @@ input#applyButton {
   width: 252px;
   height: 128px;
   font-size: 14px;
-  color: #000;
   white-space: pre;
   overflow: hidden;
+  color: #503b28;
 }
 
 #craftsman.topRight {
@@ -542,6 +543,7 @@ input#applyButton {
   color: #000;
   white-space: pre;
   overflow: hidden;
+  color: #503b28;
 }                  
 
 #craftsman.bottomLeft {
@@ -567,9 +569,9 @@ input#applyButton {
   width: 252px;
   height: 128px;
   font-size: 14px;
-  color: #000;
   white-space: pre;
   overflow: hidden;
+  color: #503b28;
 }                  
 
 #craftsman.bottomRight {
@@ -595,7 +597,7 @@ input#applyButton {
   left: 25px;
   top: 30px;
   font-size: 14px;
-  color: #000;
+  color: #503b28;
   white-space: pre;
   overflow: hidden;
 }                  
