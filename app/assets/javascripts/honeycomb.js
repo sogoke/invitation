@@ -33,7 +33,7 @@ var TOP_BLACKLIST = ['00','10','20','70','80','90','100','110','120',
   '02','12','22','72','82','92','102','112','122'];
 
 var SELFINTRO_LENGTH = 140;
-var GRAFTSMAN_CHAR_NUMBER = 18;
+var GRAFTSMAN_TOKEN_NUMBER = 32.0;
 ///////////////////////////////////////////////////////////////////////////////
 // Global Variables
 ///////////////////////////////////////////////////////////////////////////////
@@ -111,38 +111,51 @@ function getOrder(level) {
 }
 
 function getCraftsman(tube, rawMessage, name) {
-  var craftsman = {}, i,
+  var craftsman = {}, 
+      token, i, j = GRAFTSMAN_TOKEN_NUMBER,
       x = tube.attr('x'),
       y = tube.attr('y'),
       cx = VISUAL_WIDTH / 2,
       cy = VISUAL_HEIGHT / 2,
       message = rawMessage.replace('\\n', '').replace('<br \/>', ''),
-      lines =  Math.floor(message.length / GRAFTSMAN_CHAR_NUMBER) + 1,
-      messageHTML = '';
+      messageHTML = '<p>';
 
-  for (i = 0; i < lines; i++) {
-    messageHTML += ('<p>' + message.substring(i * GRAFTSMAN_CHAR_NUMBER, (i + 1) * GRAFTSMAN_CHAR_NUMBER) + '</p>');
+  for (i = 0; i <= rawMessage.length; i++) {
+    if (i === rawMessage.length) {
+      messageHTML += '</p>';
+    } else if (j <= 1.0) {
+      j = GRAFTSMAN_TOKEN_NUMBER;
+      messageHTML += '</p><p>';
+    } else {
+      messageHTML += rawMessage[i];
+      if ((/[a-zA-Z0-9\_\\\/\:\.]/).test(rawMessage[i])) {
+      token = 1.0;
+    } else {  // Chinese characters
+      token = 2.0;
+    }
+    j -= token;
   }
+}
 
-  if (x < cx && y < cy) {
-    craftsman.cls = 'topLeft';
-    craftsman.css = {'top': y + 120, 'left': x + 15};
-    craftsman.html = '<strong class="topLeftName">' + name + '</strong><div class="topLeftMessage">' + messageHTML + '</div>';
-  } else if (x >= cx && y < cy) {
-    craftsman.cls = 'topRight';
-    craftsman.css = {'top': y + 120, 'left': x - 310};
-    craftsman.html = '<strong class="topRightName">' + name + '</strong><div class="topRightMessage">' + messageHTML + '</div>'; 
-  } else if (x >= cx && y >= cy) {
-    craftsman.cls = 'bottomRight';
-    craftsman.css = {'top': y - 60, 'left': x - 310};
-    craftsman.html = '<strong class="bottomRightName">' + name + '</strong><div class="bottomRightMessage">' + messageHTML + '</div>'; 
-  } else if (x < cx && y >= cy) {
-    craftsman.cls = 'bottomLeft';
-    craftsman.css = {'top': y - 60, 'left': x + 15};
-    craftsman.html = '<strong class="bottomLeftName">' + name + '</strong><div class="bottomLeftMessage">' + messageHTML + '</div>'; 
-  }
+if (x < cx && y < cy) {
+  craftsman.cls = 'topLeft';
+  craftsman.css = {'top': y + 120, 'left': x + 15};
+  craftsman.html = '<strong class="topLeftName">' + name + '</strong><div class="topLeftMessage">' + messageHTML + '</div>';
+} else if (x >= cx && y < cy) {
+  craftsman.cls = 'topRight';
+  craftsman.css = {'top': y + 120, 'left': x - 310};
+  craftsman.html = '<strong class="topRightName">' + name + '</strong><div class="topRightMessage">' + messageHTML + '</div>'; 
+} else if (x >= cx && y >= cy) {
+  craftsman.cls = 'bottomRight';
+  craftsman.css = {'top': y - 60, 'left': x - 310};
+  craftsman.html = '<strong class="bottomRightName">' + name + '</strong><div class="bottomRightMessage">' + messageHTML + '</div>'; 
+} else if (x < cx && y >= cy) {
+  craftsman.cls = 'bottomLeft';
+  craftsman.css = {'top': y - 60, 'left': x + 15};
+  craftsman.html = '<strong class="bottomLeftName">' + name + '</strong><div class="bottomLeftMessage">' + messageHTML + '</div>'; 
+}
 
-  return craftsman;
+return craftsman;
 }
 
 function setTube(level, x, y, name, avatar, message) {
@@ -295,12 +308,12 @@ function setTube(level, x, y, name, avatar, message) {
         }
 
         if (timer) {clearTimeout(timer);
-        if (hasCraftman) {$('#craftsman').hide(); hasCraftman = false;}
-        if (outstanding !== undefined) {outstanding.animate({'scale': 1}, DURATION, 'elastic').toBottom();}
+          if (hasCraftman) {$('#craftsman').hide(); hasCraftman = false;}
+          if (outstanding !== undefined) {outstanding.animate({'scale': 1}, DURATION, 'elastic').toBottom();}
 
-        if (paper.top === tube) {
-          tube.animate({'scale': 1}, DURATION, 'elastic').toBottom();
-        }
+          if (paper.top === tube) {
+            tube.animate({'scale': 1}, DURATION, 'elastic').toBottom();
+          }
         }
     });
 
@@ -345,7 +358,7 @@ $(document).ready(function() {
     } else if ($.browser.msie && $.browser.version == '7.0') {
     } else if ($.browser.msie && $.browser.version == '8.0') {
     } else if ($.browser.msie && $.browser.version == '9.0') {
-      }else if ($.browser.mozilla) {
+    }else if ($.browser.mozilla) {
       DURATION = 1000;
       WAITING = 600;
     } else if ($.browser.opera) {
