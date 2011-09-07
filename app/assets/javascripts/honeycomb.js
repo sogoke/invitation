@@ -34,6 +34,8 @@ var TOP_BLACKLIST = ['00','10','20','70','80','90','100','110','120',
 
 var SELFINTRO_LENGTH = 140;
 var GRAFTSMAN_TOKEN_NUMBER = 32.0;
+var ASCII_CHAR_TOKEN_FACOTOR = 1.0;
+var CHINESE_CHAR_TOKEN_FACTOR = 2.2;
 ///////////////////////////////////////////////////////////////////////////////
 // Global Variables
 ///////////////////////////////////////////////////////////////////////////////
@@ -129,11 +131,10 @@ function getCraftsman(tube, rawMessage, name) {
     } else {
       messageHTML += rawMessage[i];
       if ((/[a-zA-Z0-9\_\\\/\:\.]/).test(rawMessage[i])) {
-      token = 1.0;
+      j -= ASCII_CHAR_TOKEN_FACOTOR;
     } else {  // Chinese characters
-      token = 2.0;
+      j -= CHINESE_CHAR_TOKEN_FACTOR;
     }
-    j -= token;
   }
 }
 
