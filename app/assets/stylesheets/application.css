@@ -555,7 +555,7 @@ input#applyButton {
 }                  
 
 #craftsman.bottomRight {
-  background: url("css/BG-craftsman-bottom-right.png") no-repeat 0 0;
+  background: url("/css/BG-craftsman-bottom-right.png") no-repeat 0 0;
 }
 
 #craftsman .bottomRightName {
