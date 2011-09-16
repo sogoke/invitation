@@ -49,7 +49,7 @@ td#grow {
 }
 
 .popover div#feedback {
-  background: url(css/BG-feedback.gif) no-repeat center center;
+  background: url("/img/css/BG-feedback.gif") no-repeat center center;
   z-index: 8;
   top: 20%;
 }
@@ -119,12 +119,12 @@ td#grow {
 }
 
 #craftsman.topLeft {
-  background: url(css/BG-craftsman-top-left.gif) no-repeat 0 0;
+  background: url("/img/css/BG-craftsman-top-left.gif") no-repeat 0 0;
 }
 
 #craftsman .topLeftMessage {
   position: relative;
-  left: 85px;
+  left: 82px;
   top:30px;
 }
 
@@ -133,12 +133,12 @@ td#grow {
 }
 
 .topRight {
-  background: url(css/BG-craftsman-top-right.gif) no-repeat 0 0;
+  background: url("/img/css/BG-craftsman-top-right.gif") no-repeat 0 0;
 }
 
 #craftsman .topRightMessage {
   position: relative;
-  right: 85px;
+  right: 88px;
   top: 30px;
 }                  
 
@@ -147,22 +147,22 @@ td#grow {
 }
 
 .bottomLeft {
-  background: url(css/BG-craftsman-bottom-left.gif) no-repeat 0 0;
+  background: url("/img/css/BG-craftsman-bottom-left.gif") no-repeat 0 0;
 }
 
 #craftsman .bottomLeftMessage {
   position: relative;
-  left: 85px;
+  left: 82px;
   top:30px;
 }                  
 
 .bottomRight {
-  background: url(css/BG-craftsman-bottom-right.gif) no-repeat 0 0;
+  background: url("/img/css/BG-craftsman-bottom-right.gif") no-repeat 0 0;
 }
 
 #craftsman .bottomRightMessage {
   position: relative;
-  right: 85px;
+  right: 88px;
   top:30px;
 }
 
@@ -189,7 +189,7 @@ td#grow {
 }
 
 #contactContent div#join div#needs ul.position li {
-  list-style-image: url(css/bullet-turn.png);
+  list-style-image: url("/img/css/bullet-turn.png");
 }
 
 #contactContent div#sidebar div#follow h3 {

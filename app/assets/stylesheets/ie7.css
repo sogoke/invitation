@@ -88,12 +88,12 @@ body {
 }
 
 .topLeft {
-  background: url("css/BG-craftsman-top-left.gif") no-repeat 0 0;
+  background: url("/img/css/BG-craftsman-top-left.gif") no-repeat 0 0;
 }
 
 #craftsman .topLeftMessage {
   position: relative;
-  left: 85px;
+  left: 82px;
   top:30px;
   padding: 5px 0 0 0;
 }
@@ -103,12 +103,12 @@ body {
 }
 
 .topRight {
-  background: url("css/BG-craftsman-top-right.gif") no-repeat 0 0;
+  background: url("/img/css/BG-craftsman-top-right.gif") no-repeat 0 0;
 }
 
 #craftsman .topRightMessage {
   position: relative;
-  right: 85px;
+  right: 88px;
   top: 30px;
 }                  
 
@@ -117,12 +117,12 @@ body {
 }
 
 .bottomLeft {
-  background: url("css/BG-craftsman-bottom-left.gif") no-repeat 0 0;
+  background: url("/img/css/BG-craftsman-bottom-left.gif") no-repeat 0 0;
 }
 
 #craftsman .bottomLeftMessage {
   position: relative;
-  left: 85px;
+  left: 82px;
   top:30px;
 }                  
 
@@ -131,12 +131,12 @@ body {
 }
 
 .bottomRight {
-  background: url("css/BG-craftsman-bottom-right.gif") no-repeat 0 0;
+  background: url("/img/css/BG-craftsman-bottom-right.gif") no-repeat 0 0;
 }
 
 #craftsman .bottomRightMessage {
   position: relative;
-  right: 90px;
+  right: 88px;
   top:30px;
 }
 
@@ -163,7 +163,7 @@ body {
 }
 
 #contactContent div#join div#needs ul.position li {
-  list-style-image: url("css/bullet-turn.png");
+  list-style-image: url("/img/css/bullet-turn.png");
 }
 
 #contactContent div#sidebar div#follow h3 {
