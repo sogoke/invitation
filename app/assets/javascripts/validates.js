@@ -1,11 +1,13 @@
 function checkUser(token, value){
-	var exist = false;
+  var exist = false,
+      encodedValue = encodeURIComponent(value);
 	$.ajax({
-		async: false,
-	  url: "/artists/exist?token="+token+"&"+token+"="+value,
+    async: false,
+    contentType: 'application/x-www-form-urlencoded',
+	  url: "/artists/exist?token="+token+"&"+token+"="+encodedValue,
 		dataType: 'json',
 	  success: function( data ){
-	  	exist = data['exist'];
+	    exist = data.exist;
 		}
 	});
 	return exist;
@@ -24,7 +26,7 @@ jQuery.validator.addMethod("userEmailUniqueness", function(value, element, param
 }, "Email is not unique");
 
 jQuery.validator.addMethod('userNameValid', function (value) { 
-    return /^[\w\u4e00-\u9fa5]+$/.test(value); 
+    return (/^[\w\u4e00-\u9fa5]+$/).test(value); 
 }, "wrong");
 
 $("form.request").validate({
