@@ -21,7 +21,7 @@ body {
 .popover {
   position:fixed;
   background: transparent;
-  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#B2000000,endColorstr=#B2000000)"; /* IE8 */
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#F2000000,endColorstr=#F2000000)"; /* IE8 */
   zoom: 1;
 }
 

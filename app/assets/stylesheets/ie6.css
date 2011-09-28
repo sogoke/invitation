@@ -42,8 +42,8 @@ td#grow {
 .popover {
   position: absolute;
   background: transparent;
-  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#B2000000,endColorstr=#B2000000)"; /* IE8 */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#B2000000,endColorstr=#B2000000);   /* IE6 & 7 */
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#F2000000,endColorstr=#F2000000)"; /* IE8 */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#F2000000,endColorstr=#F2000000);   /* IE6 & 7 */
   zoom: 1;
   height: 150%;
 }

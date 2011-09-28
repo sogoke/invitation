@@ -381,14 +381,23 @@ input#applyButton {
 }                  
 
 .popover {
-  display:none;
   position:fixed;
   height: 100%;
   width:100%;
   top: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.93);
   z-index: 7;
+}
+
+.popover div#spinner {
+  width: 128px;
+  height: 128px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  margin: -128px 0 0 -64px;
+  z-index: 1001;
 }
 
 /************************************************
@@ -602,6 +611,7 @@ input#applyButton {
   background: #ffffff;
   padding: 0 0 100px 0;
   border: 1px solid #f8f8f5;
+  display:none;
 }
 
 .popover div#request img.requestClose {

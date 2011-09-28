@@ -4,7 +4,17 @@
 var WIDTH = 1000, HEIGHT = 400;
 var VISUAL_WIDTH = 1000, VISUAL_HEIGHT = 300;
 
-var DURATION = 2400, WAITING = 600;
+var DURATION = 2400, WAITING = 600, LOADING = 3000;
+var OPTS = {  // optional parameter for spinner
+  lines: 6, // The number of lines to draw
+  length: 20, // The length of each line
+  width: 4, // The line thickness
+  radius: 20, // The radius of the inner circle
+  color: '#fff', // #rgb or #rrggbb
+  speed: 1, // Rounds per second
+  trail: 60, // Afterglow percentage
+  shadow: false // Whether to render a shadow
+};
 
 var DEFAULT_TUBE_NUMBER = 7;
 
@@ -347,7 +357,9 @@ function setTube(level, x, y, name, avatar, message) {
 $(document).ready(function() {
     var i, j, x, y,
         bottomOrder = getOrder('bottom'),
-        middleOrder = getOrder('middle');
+        middleOrder = getOrder('middle'),
+        target = document.getElementById('spinner'),
+        spinner = new Spinner(OPTS).spin(target);
 
     //console.log('bottom is' + bottomOrder.length);
     //console.log('middle is' + middleOrder.length);
@@ -356,8 +368,11 @@ $(document).ready(function() {
     // Adjust speed of honeycomb animation
     //////////////////////////////////////////////////////////////////
     if ($.browser.msie && $.browser.version === '6.0') {
+      LOADING = 5000;
     } else if ($.browser.msie && $.browser.version == '7.0') {
-    } else if ($.browser.msie && $.browser.version == '8.0') {
+       LOADING = 5000;           
+     } else if ($.browser.msie && $.browser.version == '8.0') {
+       LOADING = 5000;           
     } else if ($.browser.msie && $.browser.version == '9.0') {
     }else if ($.browser.mozilla) {
       DURATION = 1000;
@@ -365,12 +380,13 @@ $(document).ready(function() {
     } else if ($.browser.opera) {
       DURATION = 1200;
       WAITING = 800;
+    } else {
     }
 
     /////////////////////////////////////////////////////////////////////
     // Adjust CSS
     /////////////////////////////////////////////////////////////////////
-    if ($.browser.mozilla && $.browser.version === '6.0') {
+    if ($.browser.mozilla && parseFloat($.browser.version) >= 6.0) {
       $('.popover div#request div.detail form.request fieldset input.button').css({'left': '3.26em'});
     } else {
     }
@@ -406,6 +422,12 @@ $(document).ready(function() {
               setTube(1, x, y, "手工客", "/img/tube/default/" + Math.randInt(DEFAULT_TUBE_NUMBER) + ".png", "申请邀请码之后，你也会出现在这里");
             }
           }
+
+          setTimeout(function() {
+              spinner.stop();
+              $(target).hide();
+              $('.popover').fadeOut(1000);
+            }, LOADING);
 
         }
     });

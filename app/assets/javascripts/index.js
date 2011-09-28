@@ -1,7 +1,7 @@
 var SELFINTRO_LENGTH = 140;
 
 $('#applyButton').click(function() {
-    $('.popover').fadeIn(100);
+    $('.popover, #request').fadeIn(100);
 });
 
 // When user click on the close button
