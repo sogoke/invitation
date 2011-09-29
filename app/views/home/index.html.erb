@@ -101,6 +101,7 @@
         <% if flash[:notice] %>
           <script>
             $("#request").hide();
+            $('#spinner').hide();
             $(".popover, #feedback").fadeIn(100);
           </script>
         <% end -%>
