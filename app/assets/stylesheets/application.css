@@ -394,9 +394,9 @@ input#applyButton {
   width: 128px;
   height: 128px;
   position: relative;
-  top: 50%;
+  top: 220px;
   left: 50%;
-  margin: -128px 0 0 -64px;
+  margin: 0 0 0 -64px;
   z-index: 1001;
 }
 
