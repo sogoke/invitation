@@ -55,7 +55,7 @@ $("form.request").validate({
 			 maxlength: 140
 		 },
 		 "artist[avatar]": {
-			 accept: "jpg|jpeg|gif|png"
+			 accept: "jpg|jpeg|png"
 		 }
 	 },
 	 messages: {
